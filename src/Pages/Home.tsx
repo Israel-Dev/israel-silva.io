@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-import LoadingComponent from '../Components/Loading'
-import MainTitleComponent from '../Components/Main-Title'
-import MenuComponent from '../Components/Menu'
-import LanguagePicker from '../Components/Language-Picker'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
-import styles from '../Components/Styles/Home-Styled'
-import { colors } from '../utils/colors'
+import LoadingComponent from '../Components/Loading';
+import MainTitleComponent from '../Components/Main-Title';
+import MenuComponent from '../Components/Menu';
+import LanguagePicker from '../Components/Language-Picker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import styles from '../Components/Styles/Home-Styled';
+import { colors } from '../utils/colors';
 
 const Home = () => {
-    const [isLoading, setIsLoading] = useState(true)
-
-    useEffect(() => {
-        setTimeout(() => setIsLoading(false), 1500)
-    })
-
     return (
         <styles.HomeWrapper className="home-wrapper">
-            <LoadingComponent isLoading={isLoading} />
             <div className="content-wrapper">
                 <header className="header">
                     <p className="text">Software Engineer</p>
@@ -49,7 +42,7 @@ const Home = () => {
                 </footer>
             </div>
         </styles.HomeWrapper>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;
