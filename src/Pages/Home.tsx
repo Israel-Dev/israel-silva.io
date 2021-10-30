@@ -22,7 +22,7 @@ const Home = () => {
             <LoadingComponent isLoading={isLoading} />
             <div className="content-wrapper">
                 <header className="header">
-                    <p className="text">FullStack Web Developer</p>
+                    <p className="text">Software Engineer</p>
                     <MenuComponent />
                 </header>
                 <section className="section">
