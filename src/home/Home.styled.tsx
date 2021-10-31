@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { colors } from '../../utils/colors'
+import styled from 'styled-components';
+import { colors } from '../utils/colors';
 
 const HomeWrapper = styled.main`
     width: 100%;
@@ -9,16 +9,10 @@ const HomeWrapper = styled.main`
     align-items: center;
     flex-direction: column;
 
-    .header{
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .text {
+        color: ${colors.green};
     }
 
-    .text {
-        color: ${colors.green}
-    }
     .content-wrapper {
         width: 90vw;
         height: 100vh;
@@ -29,7 +23,7 @@ const HomeWrapper = styled.main`
     }
 
     .header {
-        margin-top: 1vh; 
+        margin-top: 1vh;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -45,17 +39,13 @@ const HomeWrapper = styled.main`
         align-items: center;
     }
 
+    .article {
+        margin-right: 5%;
+    }
+
     .profile-image {
         max-width: 600px;
     }
+`;
 
-    .footer {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2vh;
-    }
-`
-
-export default { HomeWrapper }
+export default { HomeWrapper };
