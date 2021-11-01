@@ -5,12 +5,12 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
-import { colors } from '../utils/colors';
-import styles from './Styles/Language-Picker-Styled';
+import { colors } from '../../utils/colors';
+import styles from './LanguagePicker.styled';
 
 const LanguagePickerEl = document.getElementById('language-picker-portal');
 
-const LanguagePicker = (props: any) => {
+export const LanguagePicker = (props: any) => {
     const [lang, setLang] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -80,5 +80,3 @@ const LanguagePicker = (props: any) => {
         </>
     );
 };
-
-export default LanguagePicker;

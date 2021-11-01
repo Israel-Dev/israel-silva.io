@@ -8,11 +8,20 @@ const AppStyled = styled.main`
     align-items: center;
     flex-direction: column;
 
-    .header {
+    .app-header {
         width: 95%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .app-section {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .footer {

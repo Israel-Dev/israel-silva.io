@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import AppStyled from './App.styled';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Loading from './shared/Loading';
 
 import Home from './home/Home';
-import MenuComponent from './shared/Menu';
+import About from './about/About';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { colors } from './utils/colors';
-import LanguagePicker from './shared/Language-Picker';
+import { Loading, Menu, LanguagePicker } from './shared';
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -19,24 +18,27 @@ const App = () => {
 
     return (
         <AppStyled className="app-wrapper">
-            <Loading isLoading={isLoading} />
-            <header className="header">
-                <p className="text">Software Engineer</p>
-                <MenuComponent />
-            </header>
             <Router>
-                <Switch>
-                    <Route path={['/', '/home']} component={Home} />
-                </Switch>
+                <Loading isLoading={isLoading} />
+                <header className="app-header">
+                    <p className="text">Software Engineer</p>
+                    <Menu />
+                </header>
+                <section className="app-section">
+                    <Switch>
+                        <Route path={'/about'} component={About} />
+                        <Route path={['/', '/home']} component={Home} />
+                    </Switch>
+                </section>
+                <footer className="footer">
+                    <FontAwesomeIcon
+                        icon={faDownload}
+                        size="2x"
+                        color={colors.green}
+                    />
+                    <LanguagePicker />
+                </footer>
             </Router>
-            <footer className="footer">
-                <FontAwesomeIcon
-                    icon={faDownload}
-                    size="2x"
-                    color={colors.green}
-                />
-                <LanguagePicker />
-            </footer>
         </AppStyled>
     );
 };

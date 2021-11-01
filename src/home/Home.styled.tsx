@@ -3,11 +3,11 @@ import { colors } from '../utils/colors';
 
 const HomeWrapper = styled.main`
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 
     .text {
         color: ${colors.green};

@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { colors } from '../../utils/colors'
+import styled from 'styled-components';
+import { colors } from '../../utils/colors';
 
-const Menu = styled.nav`
+export const MenuNav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,6 +20,4 @@ const Menu = styled.nav`
     .page-index {
         color: ${colors.green};
     }
-`
-
-export default Menu
+`;

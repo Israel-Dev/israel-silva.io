@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StyledLoading from './Styles/Loading-Styled';
+import StyledLoading from './Loading.styled';
 
 const loadingEl = document.getElementById('loading-portal');
 
-const LoadingComponent = (props: { isLoading: boolean }) => {
+export const Loading = (props: { isLoading: boolean }) => {
     const { isLoading } = props;
 
     if (!isLoading) {
@@ -28,5 +28,3 @@ const LoadingComponent = (props: { isLoading: boolean }) => {
         )
     );
 };
-
-export default LoadingComponent;
