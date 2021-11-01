@@ -1,11 +1,20 @@
-import Styles from './About.styled';
-import { Title } from '../shared/Title';
+import { AboutMain, Column } from './About.styled';
+import { TextBlock } from '../shared/';
 
 const About = () => {
     return (
-        <Styles className="about-wrapper">
-            <Title title="00. About Me" />
-        </Styles>
+        <AboutMain className="about-wrapper">
+            <Column className="about-column-left">
+                <TextBlock
+                    fullWidth={true}
+                    title="00. About Me"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+                />
+            </Column>
+            <Column className="about-column-right">
+                <h2>Column right</h2>
+            </Column>
+        </AboutMain>
     );
 };
 

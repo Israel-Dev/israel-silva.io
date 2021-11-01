@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
-const styles = styled.main``;
+export const AboutMain = styled.main`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+`;
 
-export default styles;
+export const Column = styled.section`
+    width: 90%;
+`;
