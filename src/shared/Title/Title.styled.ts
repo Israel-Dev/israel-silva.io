@@ -6,6 +6,8 @@ export const TitleH1 = styled.h1`
     font-weight: 100;
     color: ${colors.green};
     margin-bottom: 17px;
+    font-size: ${(props: { customHeight?: string }) =>
+        props.customHeight && props.customHeight};
 `;
 
 export const Underscore = styled.span``;

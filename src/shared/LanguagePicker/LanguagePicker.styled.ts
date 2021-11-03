@@ -26,7 +26,7 @@ const LangPickerIconWrapper = styled.div`
 const LangPickerWrapper = styled.section`
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 30;
     position: fixed;
     width: 100vw;
     height: 100vh;
