@@ -13,6 +13,7 @@ export const MenuNav = styled.nav`
     }
 
     .page-title {
+        cursor: pointer;
         font-size: 1.2em;
         margin-right: 25px;
     }

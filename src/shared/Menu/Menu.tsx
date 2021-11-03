@@ -1,4 +1,7 @@
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
+import { colors } from '../../utils/colors';
 import { MenuNav } from './Menu.styled';
 
 export const Menu = () => {
@@ -28,7 +31,12 @@ export const Menu = () => {
 
     return (
         <MenuNav>
-            <div className="pages-wrapper">{menuElem}</div>
+            <div className="pages-wrapper">
+                <p className="page-title" onClick={() => goToPage('/')}>
+                    <FontAwesomeIcon icon={faHome} color={colors.green} />
+                </p>
+                {menuElem}
+            </div>
         </MenuNav>
     );
 };

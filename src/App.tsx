@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import AppStyled from './App.styled';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Home } from './home/Home';
+import { Home } from './home';
 import { About } from './about';
+import { Experience } from './experience';
+import { Loading, Menu, LanguagePicker } from './shared';
+import { colors } from './utils/colors';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { colors } from './utils/colors';
-import { Loading, Menu, LanguagePicker } from './shared';
 
 const App = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +29,7 @@ const App = () => {
                 <section className="app-section">
                     <Switch>
                         <Route path={'/about'} component={About} />
+                        <Route path={'/experience'} component={Experience} />
                         <Route path={['/', '/home']} component={Home} />
                     </Switch>
                 </section>
