@@ -4,7 +4,7 @@ import { MainTitle } from '../shared/';
 
 import styles from './Home.styled';
 
-const Home = () => {
+export const Home = () => {
     return (
         <styles.HomeWrapper className="home-wrapper">
             <article className="article">
@@ -19,5 +19,3 @@ const Home = () => {
         </styles.HomeWrapper>
     );
 };
-
-export default Home;

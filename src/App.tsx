@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AppStyled from './App.styled';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import Home from './home/Home';
+import { Home } from './home/Home';
 import { About } from './about';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
