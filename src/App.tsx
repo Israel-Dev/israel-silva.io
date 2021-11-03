@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AppStyled from './App.styled';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Home } from './home';
-import { About } from './about';
-import { Experience } from './experience';
+import { Home, About, Experience } from './pages';
 import { Loading, Menu, LanguagePicker } from './shared';
 import { colors } from './utils/colors';
 

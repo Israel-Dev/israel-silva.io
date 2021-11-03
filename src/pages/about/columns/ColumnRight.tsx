@@ -1,4 +1,4 @@
-import { Title, List } from '../../shared';
+import { Title, List } from '../../../shared';
 import {
     Column,
     ColumnRightSection,

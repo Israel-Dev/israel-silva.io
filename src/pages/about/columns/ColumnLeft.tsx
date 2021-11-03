@@ -1,5 +1,5 @@
-import Israel from '../../assets/Israel-silva.jpeg';
-import { ImageFrame, TextBlock } from '../../shared';
+import Israel from '../../../assets/Israel-silva.jpeg';
+import { ImageFrame, TextBlock } from '../../../shared';
 import { Column, ImageWrapper, TextBlockWrapper } from './Column.styled';
 
 export const ColumnLeft = () => {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Israel from '../assets/Israel-silva.jpeg';
-import { MainTitle } from '../shared/';
+import Israel from '../../assets/Israel-silva.jpeg';
+import { MainTitle } from '../../shared';
 
 import styles from './Home.styled';
 
