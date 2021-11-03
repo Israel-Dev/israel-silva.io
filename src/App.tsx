@@ -3,7 +3,7 @@ import AppStyled from './App.styled';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Home from './home/Home';
-import About from './about/About';
+import { About } from './about';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { colors } from './utils/colors';

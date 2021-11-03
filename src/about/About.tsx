@@ -7,7 +7,7 @@ import {
 } from './About.styled';
 import { ImageFrame, TextBlock } from '../shared/';
 
-const About = () => {
+export const About = () => {
     return (
         <AboutMain className="about-wrapper">
             <Column className="about-column-left">
@@ -34,5 +34,3 @@ const About = () => {
         </AboutMain>
     );
 };
-
-export default About;
