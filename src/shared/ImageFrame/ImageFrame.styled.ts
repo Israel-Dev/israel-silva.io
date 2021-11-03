@@ -5,6 +5,27 @@ const borderRadius = '20px';
 
 export const ImageFrameArticle = styled.article`
     position: relative;
+
+    .overlay-hovered,
+    .image-hovered,
+    .image-backgrounc-hovered {
+        transition: all 0.4s ease-in-out;
+    }
+
+    .overlay-hovered,
+    .image-hovered {
+        margin-left: -15px;
+        margin-top: -15px;
+    }
+
+    .image-backgrounc-hovered {
+        transition: all 0.4s ease-in-out;
+        margin-left: 15px;
+    }
+
+    .overlay-hovered {
+        opacity: 0;
+    }
 `;
 
 interface OverlayProps {
@@ -21,6 +42,7 @@ export const Overlay = styled.div`
     z-index: 20;
     opacity: ${(props: OverlayProps) => (props.hover ? '0' : '0.3')};
     background-color: ${colors.green};
+    transition: all ease-in-out 0.3s;
 `;
 
 interface ImageProps {
@@ -28,10 +50,11 @@ interface ImageProps {
 }
 
 export const Image = styled.img`
-    border-radius: ${borderRadius};
     position: relative;
-    margin-left: ${(props: ImageProps) => (props.hover ? '-20px' : '0')};
-    margin-top: ${(props: ImageProps) => (props.hover ? '-20px' : '0')};
+    border-radius: ${borderRadius};
+    margin-left: 0;
+    margin-top: 0;
+    transition: all 0.4s ease-in-out;
 `;
 
 export const Background = styled.div`
@@ -43,4 +66,5 @@ export const Background = styled.div`
     height: ${(props: { height: string; width: string }) => props.height};
     width: ${(props: { height: string; width: string }) => props.width};
     border: ${colors.green} solid 1px;
+    transition: all 0.4s ease-in-out;
 `;

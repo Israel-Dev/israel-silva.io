@@ -25,10 +25,11 @@ export const ImageFrame = ({ src, alt, height, width, hasOverlay }: Props) => {
         >
             {hasOverlay && (
                 <Overlay
-                    className="image-frame-overlay"
+                    className={`image-frame-overlay ${
+                        hover ? 'overlay-hovered' : ''
+                    }`}
                     height={height}
                     width={width}
-                    hover={hover}
                 />
             )}
             <Image
@@ -37,9 +38,15 @@ export const ImageFrame = ({ src, alt, height, width, hasOverlay }: Props) => {
                 height={height}
                 width={width}
                 // hover={hover}
-                className="image-frame-img"
+                className={`image-frame-img ${hover ? 'image-hovered' : ''}`}
             />
-            <Background height={height} width={width} />
+            <Background
+                height={height}
+                width={width}
+                className={`image-frame-background ${
+                    hover ? 'image-backgrounc-hovered' : ''
+                }`}
+            />
         </ImageFrameArticle>
     );
 };
