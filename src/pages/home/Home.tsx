@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Israel from '../../assets/Israel-silva.jpeg';
 import { MainTitle } from '../../shared';
 
-import styles from './Home.styled';
+import { HomeWrapper } from './Home.styled';
 
 export const Home = () => {
     return (
-        <styles.HomeWrapper className="home-wrapper">
+        <HomeWrapper className="home-wrapper">
             <article className="article">
                 <MainTitle
                     title="/Israel Silva"
@@ -16,6 +16,6 @@ export const Home = () => {
             <aside>
                 <img className="profile-image" src={Israel} />
             </aside>
-        </styles.HomeWrapper>
+        </HomeWrapper>
     );
 };

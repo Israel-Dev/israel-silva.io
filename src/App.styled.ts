@@ -16,6 +16,7 @@ const AppStyled = styled.main`
     }
 
     .app-section {
+        position: relative;
         height: 100%;
         width: 90%;
         display: flex;

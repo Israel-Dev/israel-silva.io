@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { colors } from '../../utils/colors';
 
-const HomeWrapper = styled.main`
+export const HomeWrapper = styled.main`
     width: 100%;
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,5 +46,3 @@ const HomeWrapper = styled.main`
         max-width: 600px;
     }
 `;
-
-export default { HomeWrapper };
