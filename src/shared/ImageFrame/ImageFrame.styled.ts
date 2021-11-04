@@ -51,6 +51,7 @@ interface ImageProps {
 
 export const Image = styled.img`
     position: relative;
+    display: block;
     border-radius: ${borderRadius};
     margin-left: 0;
     margin-top: 0;

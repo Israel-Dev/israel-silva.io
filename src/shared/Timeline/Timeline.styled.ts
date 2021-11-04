@@ -5,7 +5,7 @@ const DotDiameter = 17.5;
 
 export const TimelineSection = styled.section`
     position: relative;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

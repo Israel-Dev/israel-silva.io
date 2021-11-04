@@ -23,6 +23,7 @@ export const TextBlock = ({
                 hasUnderline={true}
                 hasFlickering={hasFlickering}
             />
+            {header && <p>{header}</p>}
             {text && <TextBlockParagraph>{text}</TextBlockParagraph>}
         </TextBlockSection>
     );

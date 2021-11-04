@@ -36,7 +36,7 @@ export const Timeline = ({
                 className="timeline-item"
                 onMouseEnter={() => setVisibleItem(i)}
                 onMouseLeave={() => setVisibleItem(null)}
-                onClick={clickCallback ? () => clickCallback() : undefined}
+                onClick={clickCallback ? () => clickCallback(item) : undefined}
                 key={`${i}-item`}
             >
                 <Dot />
