@@ -37,7 +37,6 @@ export const ImageFrame = ({ src, alt, height, width, hasOverlay }: Props) => {
                 alt={alt}
                 height={height}
                 width={width}
-                // hover={hover}
                 className={`image-frame-img ${hover ? 'image-hovered' : ''}`}
             />
             <Background

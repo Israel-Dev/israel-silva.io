@@ -15,6 +15,7 @@ export const ColumnLeft = ({
                 header={`${jobTitle} @${enterpriseName}`}
                 fullWidth={true}
                 hasFlickering={true}
+                hasUndeline={true}
             />
         </LeftColumnWrapper>
     );

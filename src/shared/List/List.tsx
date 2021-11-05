@@ -5,10 +5,10 @@ interface Props {
 }
 
 export const List = ({ items }: Props) => {
-    const itemsEl = items.map((item) => {
+    const itemsEl = items.map((item, i) => {
         if (typeof item === 'string') {
             return (
-                <ListLI className="list-item">
+                <ListLI className="list-item" key={`${i}-item`}>
                     <ListLISpan>_</ListLISpan>
                     {item}
                 </ListLI>

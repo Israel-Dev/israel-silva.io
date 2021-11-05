@@ -10,7 +10,7 @@ export const Menu = () => {
     const pages: { value: string; label: string }[] = [
         { value: 'about', label: 'About' },
         { value: 'experience', label: 'Experience' },
-        { value: 'work', label: 'Work' },
+        { value: 'projects', label: 'Projects' },
         { value: 'contact', label: 'Contact' },
     ];
 

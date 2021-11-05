@@ -1,12 +1,21 @@
 import { TextBlockParagraph, TextBlockSection } from './TextBlock.styled';
 import { Title } from '../';
 
+export enum TextAlign {
+    center = 'center',
+    left = 'left',
+    right = 'right',
+    justify = 'justify',
+}
+
 interface Props {
     title: string;
     text?: string;
     header?: string;
     fullWidth?: boolean;
     hasFlickering?: boolean;
+    hasUndeline?: boolean;
+    textAlign?: TextAlign;
 }
 
 export const TextBlock = ({
@@ -15,12 +24,14 @@ export const TextBlock = ({
     header,
     fullWidth,
     hasFlickering,
+    hasUndeline,
+    textAlign,
 }: Props) => {
     return (
-        <TextBlockSection fullWidth={fullWidth}>
+        <TextBlockSection fullWidth={fullWidth} textAlign={textAlign}>
             <Title
                 title={title}
-                hasUnderline={true}
+                hasUnderline={hasUndeline}
                 hasFlickering={hasFlickering}
             />
             {header && <p>{header}</p>}
