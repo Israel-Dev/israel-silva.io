@@ -29,7 +29,10 @@ export const MosaicGallery = ({ items }: Props) => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
     const itemsEl = items.map((item, i) => (
-        <MosaicGalleryArticle className="mosaic-gallery-article">
+        <MosaicGalleryArticle
+            className="mosaic-gallery-article"
+            key={`mosaicGallery-item-${i}`}
+        >
             <ImageFrame
                 src={item.image}
                 alt={item.alt}

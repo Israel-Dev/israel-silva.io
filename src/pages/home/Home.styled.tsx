@@ -37,12 +37,15 @@ export const HomeWrapper = styled.main`
         flex-direction: row;
         align-items: center;
     }
+`;
 
-    .article {
-        margin-right: 5%;
-    }
+export const HomeAside = styled.aside``;
 
-    .profile-image {
-        max-width: 600px;
-    }
+export const HomeArticle = styled.article`
+    margin-right: 5%;
+`;
+
+export const HomeImage = styled.img`
+    max-width: 600px;
+    border-radius: 50px;
 `;
