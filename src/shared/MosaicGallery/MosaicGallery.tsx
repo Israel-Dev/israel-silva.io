@@ -4,13 +4,15 @@ import {
     faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ImageFrame } from '..';
+import { ImageFrame, PaginationDots } from '..';
 import { colors } from '../../utils/';
 import {
     LeftArrowAside,
     MosaicGallertyDiv,
     MosaicGalleryArticle,
+    MosaicGalleryFooter,
     MosaicGallerySection,
+    MosaicGalleryWrapper,
     RightArrowAside,
 } from './MosaicGallery.styled';
 
@@ -27,6 +29,7 @@ interface Props {
 
 export const MosaicGallery = ({ items }: Props) => {
     const [activeIndex, setActiveIndex] = useState<number>(0);
+    const numberOfPages = Math.ceil(items.length / 2);
 
     const itemsEl = items.map((item, i) => (
         <MosaicGalleryArticle
@@ -43,53 +46,64 @@ export const MosaicGallery = ({ items }: Props) => {
     ));
 
     const handleLeftArrowClick = () => {
-        if (activeIndex + 1 > Math.ceil(items.length / 2) - 1) {
+        if (activeIndex - 1 < 0) {
+            setActiveIndex(numberOfPages - 1);
+        } else {
+            setActiveIndex(activeIndex - 1);
+        }
+    };
+
+    const handleRightArrowClick = () => {
+        if (activeIndex + 1 > numberOfPages - 1) {
             setActiveIndex(0);
         } else {
             setActiveIndex(activeIndex + 1);
         }
     };
 
-    const handleRightArrowClick = () => {
-        if (activeIndex - 1 < 0) {
-            setActiveIndex(Math.ceil(items.length / 2) - 1);
-        } else {
-            setActiveIndex(activeIndex - 1);
-        }
-    };
+    const handleDotClick = (index: number) => setActiveIndex(index);
 
     return (
-        <MosaicGallerySection
-            className="mosaic-gallery-section"
-            index={activeIndex}
-            itemsLength={items.length}
-        >
-            <LeftArrowAside
-                className="mosaic-gallery-left-arrow"
-                onClick={handleLeftArrowClick}
-            >
-                <FontAwesomeIcon
-                    icon={faChevronLeft}
-                    size="2x"
-                    color={colors.gray}
-                />
-            </LeftArrowAside>
-            <MosaicGallertyDiv
-                className={`mosaic-gallery-div scrolled-${activeIndex}`}
+        <MosaicGalleryWrapper className="projects-mosaic-gallery-wrapper">
+            <MosaicGallerySection
+                className="mosaic-gallery-section"
                 index={activeIndex}
+                itemsLength={items.length}
             >
-                {itemsEl}
-            </MosaicGallertyDiv>
-            <RightArrowAside
-                className="mosaic-gallery-right-arrow"
-                onClick={handleRightArrowClick}
-            >
-                <FontAwesomeIcon
-                    icon={faChevronRight}
-                    size="2x"
-                    color={colors.gray}
+                <LeftArrowAside
+                    className="mosaic-gallery-left-arrow"
+                    onClick={handleLeftArrowClick}
+                >
+                    <FontAwesomeIcon
+                        icon={faChevronLeft}
+                        size="2x"
+                        color={colors.gray}
+                    />
+                </LeftArrowAside>
+                <MosaicGallertyDiv
+                    className={`mosaic-gallery-div scrolled-${activeIndex}`}
+                    index={activeIndex}
+                >
+                    {itemsEl}
+                </MosaicGallertyDiv>
+                <RightArrowAside
+                    className="mosaic-gallery-right-arrow"
+                    onClick={handleRightArrowClick}
+                >
+                    <FontAwesomeIcon
+                        icon={faChevronRight}
+                        size="2x"
+                        color={colors.gray}
+                    />
+                </RightArrowAside>
+            </MosaicGallerySection>
+            <MosaicGalleryFooter className="mosaic-gallery-footer">
+                <PaginationDots
+                    numberOfPages={numberOfPages}
+                    activeIndex={activeIndex}
+                    handleDotClick={handleDotClick}
                 />
-            </RightArrowAside>
-        </MosaicGallerySection>
+            </MosaicGalleryFooter>
+        </MosaicGalleryWrapper>
     );
 };

@@ -1,4 +1,4 @@
-import { MosaicGalleryWrapper, ProjectsMain } from './Projects.styled';
+import { ProjectsMain } from './Projects.styled';
 import { TextBlock, MosaicGallery } from '../../shared';
 import carlashes from '../../assets/carlashes.png';
 import netmore from '../../assets/Netmore.png';
@@ -119,9 +119,7 @@ export const Projects = () => {
                 fullWidth={true}
                 hasUndeline={true}
             />
-            <MosaicGalleryWrapper className="projects-mosaic-gallery-wrapper">
-                <MosaicGallery items={projectItems} />
-            </MosaicGalleryWrapper>
+            <MosaicGallery items={projectItems} />
         </ProjectsMain>
     );
 };

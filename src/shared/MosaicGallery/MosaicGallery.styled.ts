@@ -18,6 +18,10 @@ const getScrollingClasses = (itemsLength: number) => {
     return classes;
 };
 
+export const MosaicGalleryWrapper = styled.section`
+    /* margin-top: 5vh; */
+`;
+
 export const MosaicGallerySection = styled.section`
     position: relative;
     width: 100%;
@@ -62,6 +66,7 @@ export const LeftArrowAside = styled.aside`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 `;
 
 export const RightArrowAside = styled.aside`
@@ -74,4 +79,12 @@ export const RightArrowAside = styled.aside`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+`;
+
+export const MosaicGalleryFooter = styled.footer`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 `;
