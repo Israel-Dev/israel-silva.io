@@ -56,12 +56,13 @@ export const Image = styled.img`
     margin-left: 0;
     margin-top: 0;
     transition: all 0.4s ease-in-out;
+    object-fit: cover;
 `;
 
 export const Background = styled.div`
     position: absolute;
     top: 15px;
-    right: -15px;
+    left: 15px;
     z-index: -5;
     border-radius: ${borderRadius};
     height: ${(props: { height: string; width: string }) => props.height};
