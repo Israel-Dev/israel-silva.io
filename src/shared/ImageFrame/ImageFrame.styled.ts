@@ -24,30 +24,36 @@ export const ImageFrameArticle = styled.article`
     }
 
     .overlay-hovered {
-        opacity: 0;
+        opacity: ${(props: { isReverse?: boolean }) =>
+            props.isReverse ? '.3;' : '0;'};
     }
 `;
 
 interface OverlayProps {
-    hover?: boolean;
     height: string;
     width: string;
+    hover?: boolean;
+    color?: string;
+    isReverse?: boolean;
 }
 
 export const Overlay = styled.div`
-    height: ${(props: OverlayProps) => props.height};
+    /* height: ${(props: OverlayProps) => props.height}; */
+    height: ${(props: OverlayProps) => (props.hover ? '115%' : '100%')};
     width: ${(props: OverlayProps) => props.width};
     position: absolute;
     border-radius: ${borderRadius};
     z-index: 20;
-    opacity: ${(props: OverlayProps) => (props.hover ? '0' : '0.3')};
-    background-color: ${colors.green};
+
+    ${(props: OverlayProps) =>
+        props.isReverse
+            ? `opacity: ${props.hover ? '0.3' : '0'};`
+            : `opacity: ${props.hover ? '0' : '0.3'};`}
+
+    background-color: ${(props: OverlayProps) =>
+        props.color ? props.color : colors.green};
     transition: all ease-in-out 0.3s;
 `;
-
-interface ImageProps {
-    hover?: boolean;
-}
 
 export const Image = styled.img`
     position: relative;

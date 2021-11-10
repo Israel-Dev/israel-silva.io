@@ -16,7 +16,7 @@ export const ColumnRight = ({ src, alt, enterpriseName }: Props) => {
                     alt={alt}
                     height="100%"
                     width="100%"
-                    hasOverlay={true}
+                    overlayData={{ hasOverlay: true }}
                 />
             </ImageWrapper>
             <ImageLabel>{enterpriseName}</ImageLabel>

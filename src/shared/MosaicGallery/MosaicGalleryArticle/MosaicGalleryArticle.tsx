@@ -1,4 +1,5 @@
 import { ImageFrame } from '../..';
+import { colors } from '../../../utils';
 import { MosaicGalleryArticleWrapper } from './MosaicGalleryArticle.styled';
 
 interface Props {
@@ -10,6 +11,16 @@ interface Props {
 
 export const MosaicGalleryArticle = ({ image, alt, height, width }: Props) => (
     <MosaicGalleryArticleWrapper className="mosaic-gallery-article-wrapper">
-        <ImageFrame src={image} alt={alt} height={height} width={width} />
+        <ImageFrame
+            src={image}
+            alt={alt}
+            height={height}
+            width={width}
+            overlayData={{
+                hasOverlay: true,
+                color: colors.black,
+                isReverse: true,
+            }}
+        />
     </MosaicGalleryArticleWrapper>
 );

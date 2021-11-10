@@ -20,7 +20,7 @@ export const ColumnLeft = () => {
                     alt={'Israel Silva'}
                     height="300px"
                     width="300px"
-                    hasOverlay={true}
+                    overlayData={{ hasOverlay: true }}
                 />
             </ImageWrapper>
         </Column>
