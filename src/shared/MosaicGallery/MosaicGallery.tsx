@@ -4,12 +4,12 @@ import {
     faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ImageFrame, PaginationDots } from '..';
+import { PaginationDots } from '..';
 import { colors } from '../../utils/';
+import { MosaicGalleryArticle } from './MosaicGalleryArticle';
 import {
     LeftArrowAside,
     MosaicGallertyDiv,
-    MosaicGalleryArticle,
     MosaicGalleryFooter,
     MosaicGallerySection,
     MosaicGalleryWrapper,
@@ -33,16 +33,12 @@ export const MosaicGallery = ({ items }: Props) => {
 
     const itemsEl = items.map((item, i) => (
         <MosaicGalleryArticle
-            className="mosaic-gallery-article"
             key={`mosaicGallery-item-${i}`}
-        >
-            <ImageFrame
-                src={item.image}
-                alt={item.alt}
-                height="300px"
-                width="100%"
-            />
-        </MosaicGalleryArticle>
+            image={item.image}
+            alt={item.alt}
+            height={'300px'}
+            width={'100%'}
+        />
     ));
 
     const handleLeftArrowClick = () => {

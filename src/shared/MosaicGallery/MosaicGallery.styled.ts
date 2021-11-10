@@ -49,13 +49,6 @@ export const MosaicGallertyDiv = styled.div`
     display: -webkit-inline-box;
 `;
 
-export const MosaicGalleryArticle = styled.article`
-    position: relative;
-    width: 35vw;
-    height: auto;
-    padding: 0 5vw;
-`;
-
 export const LeftArrowAside = styled.aside`
     position: absolute;
     left: 0;

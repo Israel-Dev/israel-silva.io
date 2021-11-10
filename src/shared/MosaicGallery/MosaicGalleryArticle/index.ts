@@ -1,0 +1,1 @@
+export { MosaicGalleryArticle } from './MosaicGalleryArticle';
