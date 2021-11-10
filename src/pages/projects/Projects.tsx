@@ -6,20 +6,13 @@ import netmore from '../../assets/Netmore.png';
 const projectItems = [
     {
         image: carlashes,
-        buttons: [
-            'Typescript',
-            'Node.TS',
-            'Express',
-            'React',
-            'MongoDB',
-            'Mongoose',
-        ],
+        cards: ['Typescript', 'Node.TS', 'Express', 'React', 'MongoDB'],
         url: '/projects/carlashes',
         alt: 'Carlashes',
     },
     {
         image: netmore,
-        buttons: [
+        cards: [
             'Typescript',
             'Node.TS',
             'Express',
@@ -32,7 +25,7 @@ const projectItems = [
     },
     {
         image: carlashes,
-        buttons: [
+        cards: [
             'Typescript',
             'Node.TS',
             'Express',
@@ -45,7 +38,7 @@ const projectItems = [
     },
     {
         image: netmore,
-        buttons: [
+        cards: [
             'Typescript',
             'Node.TS',
             'Express',
@@ -58,7 +51,7 @@ const projectItems = [
     },
     {
         image: carlashes,
-        buttons: [
+        cards: [
             'Typescript',
             'Node.TS',
             'Express',
@@ -71,7 +64,7 @@ const projectItems = [
     },
     {
         image: netmore,
-        buttons: [
+        cards: [
             'Typescript',
             'Node.TS',
             'Express',
@@ -84,7 +77,7 @@ const projectItems = [
     },
     {
         image: carlashes,
-        buttons: [
+        cards: [
             'Typescript',
             'Node.TS',
             'Express',
@@ -97,7 +90,7 @@ const projectItems = [
     },
     {
         image: netmore,
-        buttons: [
+        cards: [
             'Typescript',
             'Node.TS',
             'Express',

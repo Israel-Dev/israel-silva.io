@@ -1,15 +1,20 @@
 import { useState } from 'react';
 import {
     Background,
+    CardsWrapper,
     Image,
     ImageFrameArticle,
     Overlay,
+    OverlayContent,
 } from './ImageFrame.styled';
+import { Card } from '../';
 
 interface OverlayProps {
     hasOverlay: boolean;
     color?: string;
     isReverse?: boolean;
+    cards?: string[];
+    clickUrl?: string;
 }
 
 interface Props {
@@ -23,6 +28,8 @@ interface Props {
 export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
     const [hover, setIsHover] = useState<boolean>(false);
 
+    const cardsEl = overlayData?.cards?.map((card) => <Card label={card} />);
+
     return (
         <ImageFrameArticle
             className="image-frame-article"
@@ -31,16 +38,27 @@ export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
             isReverse={overlayData?.isReverse}
         >
             {overlayData?.hasOverlay && (
-                <Overlay
-                    className={`image-frame-overlay ${
-                        hover ? 'overlay-hovered' : ''
-                    }`}
-                    height={height}
-                    width={width}
-                    color={overlayData.color}
-                    isReverse={overlayData.isReverse}
-                    hover={hover}
-                />
+                <>
+                    <OverlayContent
+                        className={`image-frame-overlay-content ${
+                            hover ? 'overlay-content-hovered' : ''
+                        }`}
+                    >
+                        <CardsWrapper className="image-frame-overlay-cards-wrapper">
+                            {cardsEl}
+                        </CardsWrapper>
+                    </OverlayContent>
+                    <Overlay
+                        className={`image-frame-overlay ${
+                            hover ? 'overlay-hovered' : ''
+                        }`}
+                        height={height}
+                        width={width}
+                        color={overlayData.color}
+                        isReverse={overlayData.isReverse}
+                        hover={hover}
+                    />
+                </>
             )}
             <Image
                 src={src}

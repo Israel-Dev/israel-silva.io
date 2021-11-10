@@ -18,7 +18,7 @@ import {
 
 interface MosaicItems {
     image: string;
-    buttons: string[];
+    cards: string[];
     url: string;
     alt: string;
 }
@@ -38,6 +38,7 @@ export const MosaicGallery = ({ items }: Props) => {
             alt={item.alt}
             height={'300px'}
             width={'100%'}
+            cards={item.cards}
         />
     ));
 

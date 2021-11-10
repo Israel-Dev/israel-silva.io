@@ -27,6 +27,18 @@ export const ImageFrameArticle = styled.article`
         opacity: ${(props: { isReverse?: boolean }) =>
             props.isReverse ? '.3;' : '0;'};
     }
+
+    .image-frame-overlay-content {
+        opacity: 0;
+        transition: all ease-in-out 0.4s;
+    }
+
+    .overlay-content-hovered {
+        opacity: 1;
+        transition: all ease-in-out 0.4s;
+        /* margin-left: -15px; */
+        /* margin-top: -15px; */
+    }
 `;
 
 interface OverlayProps {
@@ -38,7 +50,6 @@ interface OverlayProps {
 }
 
 export const Overlay = styled.div`
-    /* height: ${(props: OverlayProps) => props.height}; */
     height: ${(props: OverlayProps) => (props.hover ? '115%' : '100%')};
     width: ${(props: OverlayProps) => props.width};
     position: absolute;
@@ -53,6 +64,30 @@ export const Overlay = styled.div`
     background-color: ${(props: OverlayProps) =>
         props.color ? props.color : colors.green};
     transition: all ease-in-out 0.3s;
+`;
+
+export const OverlayContent = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 90%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+`;
+
+export const CardsWrapper = styled.section`
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 `;
 
 export const Image = styled.img`

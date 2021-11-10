@@ -7,9 +7,16 @@ interface Props {
     alt: string;
     height: string;
     width: string;
+    cards?: string[];
 }
 
-export const MosaicGalleryArticle = ({ image, alt, height, width }: Props) => (
+export const MosaicGalleryArticle = ({
+    image,
+    alt,
+    height,
+    width,
+    cards,
+}: Props) => (
     <MosaicGalleryArticleWrapper className="mosaic-gallery-article-wrapper">
         <ImageFrame
             src={image}
@@ -20,6 +27,7 @@ export const MosaicGalleryArticle = ({ image, alt, height, width }: Props) => (
                 hasOverlay: true,
                 color: colors.black,
                 isReverse: true,
+                cards,
             }}
         />
     </MosaicGalleryArticleWrapper>
