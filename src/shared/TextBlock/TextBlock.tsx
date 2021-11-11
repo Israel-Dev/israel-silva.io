@@ -1,5 +1,6 @@
 import { TextBlockParagraph, TextBlockSection } from './TextBlock.styled';
 import { Title } from '../';
+import { MouseEventHandler, ReactElement } from 'react';
 
 export enum TextAlign {
     center = 'center',
@@ -10,6 +11,7 @@ export enum TextAlign {
 
 interface Props {
     title: string;
+    titleClickCallback?: MouseEventHandler<HTMLHeadingElement>;
     text?: string;
     header?: string;
     fullWidth?: boolean;
@@ -20,6 +22,7 @@ interface Props {
 
 export const TextBlock = ({
     title,
+    titleClickCallback,
     text,
     header,
     fullWidth,
@@ -33,6 +36,7 @@ export const TextBlock = ({
                 title={title}
                 hasUnderline={hasUndeline}
                 hasFlickering={hasFlickering}
+                onClick={titleClickCallback}
             />
             {header && <p>{header}</p>}
             {text && <TextBlockParagraph>{text}</TextBlockParagraph>}

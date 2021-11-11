@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { RoutePaths } from '../../../routes';
 import { Button, TextBlock } from '../../../shared';
 import {
@@ -22,6 +22,9 @@ export const ProjectPage = ({ id }: Props) => {
                 <ProjecPageTextBlock className="project-page-text-block">
                     <TextBlock
                         title={'< netmoreelectronics.com'}
+                        titleClickCallback={() =>
+                            history.push(RoutePaths.projects)
+                        }
                         text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum."
                         fullWidth={true}
                         hasUndeline={true}
