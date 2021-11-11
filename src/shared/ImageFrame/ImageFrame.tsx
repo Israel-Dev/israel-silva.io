@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import {
     Background,
+    ButtonWrapper,
     CardsWrapper,
     Image,
     ImageFrameArticle,
     Overlay,
     OverlayContent,
 } from './ImageFrame.styled';
-import { Card } from '../';
+import { Button, Card } from '../';
 
 interface OverlayProps {
     hasOverlay: boolean;
@@ -39,15 +40,25 @@ export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
         >
             {overlayData?.hasOverlay && (
                 <>
-                    <OverlayContent
-                        className={`image-frame-overlay-content ${
-                            hover ? 'overlay-content-hovered' : ''
-                        }`}
-                    >
-                        <CardsWrapper className="image-frame-overlay-cards-wrapper">
-                            {cardsEl}
-                        </CardsWrapper>
-                    </OverlayContent>
+                    {overlayData.cards && (
+                        <OverlayContent
+                            className={`image-frame-overlay-content ${
+                                hover ? 'overlay-content-hovered' : ''
+                            }`}
+                        >
+                            <CardsWrapper className="image-frame-overlay-cards-wrapper">
+                                {cardsEl}
+                            </CardsWrapper>
+                            <ButtonWrapper className="button-wrapper">
+                                <Button
+                                    label="View more"
+                                    callback={() => {
+                                        console.log('Called');
+                                    }}
+                                />
+                            </ButtonWrapper>
+                        </OverlayContent>
+                    )}
                     <Overlay
                         className={`image-frame-overlay ${
                             hover ? 'overlay-hovered' : ''

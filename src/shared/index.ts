@@ -10,3 +10,4 @@ export { Timeline } from './Timeline';
 export { MosaicGallery } from './MosaicGallery';
 export { PaginationDots } from './PaginationDots';
 export { Card } from './Card';
+export { Button } from './Button';

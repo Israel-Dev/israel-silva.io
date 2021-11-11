@@ -25,7 +25,7 @@ export const ImageFrameArticle = styled.article`
 
     .overlay-hovered {
         opacity: ${(props: { isReverse?: boolean }) =>
-            props.isReverse ? '.3;' : '0;'};
+            props.isReverse ? '.7;' : '0;'};
     }
 
     .image-frame-overlay-content {
@@ -36,8 +36,6 @@ export const ImageFrameArticle = styled.article`
     .overlay-content-hovered {
         opacity: 1;
         transition: all ease-in-out 0.4s;
-        /* margin-left: -15px; */
-        /* margin-top: -15px; */
     }
 `;
 
@@ -72,7 +70,7 @@ export const OverlayContent = styled.div`
     left: 0;
     height: 100%;
     width: 90%;
-    z-index: 10;
+    z-index: 30;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,6 +83,16 @@ export const CardsWrapper = styled.section`
     height: 40%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+`;
+
+export const ButtonWrapper = styled.section`
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
