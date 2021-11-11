@@ -8,10 +8,10 @@ export const Menu = () => {
     const history = useHistory();
 
     const pages: { value: string; label: string }[] = [
-        { value: 'about', label: 'About' },
-        { value: 'experience', label: 'Experience' },
-        { value: 'projects', label: 'Projects' },
-        { value: 'contact', label: 'Contact' },
+        { value: '/about', label: 'About' },
+        { value: '/experience', label: 'Experience' },
+        { value: '/projects', label: 'Projects' },
+        { value: '/contact', label: 'Contact' },
     ];
 
     const goToPage = (value: string) => history.push(value);

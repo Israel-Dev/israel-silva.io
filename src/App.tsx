@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import AppStyled from './App.styled';
+import { Routes } from './routes';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Home, About, Experience, Projects } from './pages';
 import { Loading, Menu, LanguagePicker } from './shared';
 import { colors } from './utils/colors';
 
@@ -25,12 +25,7 @@ const App = () => {
                     <Menu />
                 </header>
                 <section className="app-section">
-                    <Switch>
-                        <Route path={'/about'} component={About} />
-                        <Route path={'/experience'} component={Experience} />
-                        <Route path={'/projects'} component={Projects} />
-                        <Route path={['/', '/home']} component={Home} />
-                    </Switch>
+                    <Routes />
                 </section>
                 <footer className="footer">
                     <FontAwesomeIcon

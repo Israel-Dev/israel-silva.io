@@ -8,6 +8,7 @@ interface Props {
     height: string;
     width: string;
     cards?: string[];
+    url?: string;
 }
 
 export const MosaicGalleryArticle = ({
@@ -16,6 +17,7 @@ export const MosaicGalleryArticle = ({
     height,
     width,
     cards,
+    url,
 }: Props) => (
     <MosaicGalleryArticleWrapper className="mosaic-gallery-article-wrapper">
         <ImageFrame
@@ -28,6 +30,7 @@ export const MosaicGalleryArticle = ({
                 color: colors.black,
                 isReverse: true,
                 cards,
+                clickUrl: url,
             }}
         />
     </MosaicGalleryArticleWrapper>

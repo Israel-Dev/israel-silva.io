@@ -39,6 +39,7 @@ export const MosaicGallery = ({ items }: Props) => {
             height={'300px'}
             width={'100%'}
             cards={item.cards}
+            url={item.url}
         />
     ));
 

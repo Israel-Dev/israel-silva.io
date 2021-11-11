@@ -9,6 +9,7 @@ import {
     OverlayContent,
 } from './ImageFrame.styled';
 import { Button, Card } from '../';
+import { useHistory } from 'react-router-dom';
 
 interface OverlayProps {
     hasOverlay: boolean;
@@ -27,6 +28,7 @@ interface Props {
 }
 
 export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
+    const history = useHistory();
     const [hover, setIsHover] = useState<boolean>(false);
 
     const cardsEl = overlayData?.cards?.map((card) => <Card label={card} />);
@@ -49,14 +51,18 @@ export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
                             <CardsWrapper className="image-frame-overlay-cards-wrapper">
                                 {cardsEl}
                             </CardsWrapper>
-                            <ButtonWrapper className="button-wrapper">
-                                <Button
-                                    label="View more"
-                                    callback={() => {
-                                        console.log('Called');
-                                    }}
-                                />
-                            </ButtonWrapper>
+                            {overlayData.clickUrl && (
+                                <ButtonWrapper className="button-wrapper">
+                                    <Button
+                                        label="View more"
+                                        callback={() =>
+                                            history.push(
+                                                overlayData.clickUrl as string
+                                            )
+                                        }
+                                    />
+                                </ButtonWrapper>
+                            )}
                         </OverlayContent>
                     )}
                     <Overlay
