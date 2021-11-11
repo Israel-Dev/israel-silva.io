@@ -1,6 +1,11 @@
 import { useHistory } from 'react-router-dom';
 import { RoutePaths } from '../../../routes';
-import { ProjectPageMain } from './ProjectPage.styled';
+import { Button, TextBlock } from '../../../shared';
+import {
+    ProjecPageTextBlock,
+    ProjectPageHeader,
+    ProjectPageMain,
+} from './ProjectPage.styled';
 
 interface Props {
     id: string;
@@ -13,7 +18,22 @@ export const ProjectPage = ({ id }: Props) => {
 
     return (
         <ProjectPageMain className="project-page-main">
-            Project Page
+            <ProjectPageHeader className="project-page-header">
+                <ProjecPageTextBlock className="project-page-text-block">
+                    <TextBlock
+                        title={'< netmoreelectronics.com'}
+                        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum."
+                        fullWidth={true}
+                        hasUndeline={true}
+                    />
+                </ProjecPageTextBlock>
+                <Button
+                    label="Visit code base"
+                    callback={() =>
+                        window.open('https://netmoreelectronics.com', '_blank')
+                    }
+                />
+            </ProjectPageHeader>
         </ProjectPageMain>
     );
 };
