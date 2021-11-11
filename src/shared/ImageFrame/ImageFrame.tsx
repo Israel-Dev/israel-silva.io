@@ -31,7 +31,9 @@ export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
     const history = useHistory();
     const [hover, setIsHover] = useState<boolean>(false);
 
-    const cardsEl = overlayData?.cards?.map((card) => <Card label={card} />);
+    const cardsEl = overlayData?.cards?.map((card, i) => (
+        <Card key={`card-${i}`} label={card} />
+    ));
 
     return (
         <ImageFrameArticle

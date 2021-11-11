@@ -20,6 +20,7 @@ export const PaginationDots = ({
         for (let i = 0; i < numberOfPages; i++) {
             elements.push(
                 <FontAwesomeIcon
+                    key={`pagination-dots-${i}`}
                     icon={faCircle}
                     className={`dot-${
                         i === activeIndex ? 'active' : 'inactive'
