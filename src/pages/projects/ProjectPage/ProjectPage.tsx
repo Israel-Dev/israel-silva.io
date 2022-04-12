@@ -1,10 +1,11 @@
 import { Link, useHistory } from 'react-router-dom';
 import { RoutePaths } from '../../../routes';
-import { Button, TextBlock } from '../../../shared';
+import { Button, ImageGallery, TextBlock } from '../../../shared';
 import {
     ProjecPageTextBlock,
     ProjectPageHeader,
     ProjectPageMain,
+    ProjectPageSection,
 } from './ProjectPage.styled';
 
 interface Props {
@@ -37,6 +38,9 @@ export const ProjectPage = ({ id }: Props) => {
                     }
                 />
             </ProjectPageHeader>
+            <ProjectPageSection className="project-page-section">
+                <ImageGallery />
+            </ProjectPageSection>
         </ProjectPageMain>
     );
 };
