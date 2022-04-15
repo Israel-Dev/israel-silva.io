@@ -1,4 +1,4 @@
-import { StyledInput } from "./Input.styled";
+import { StyledInput } from './Input.styled';
 
 interface Props {
   placeholder: string;
@@ -7,13 +7,7 @@ interface Props {
 }
 
 const Input = ({ placeholder, onChange, type }: Props) => {
-  return (
-    <StyledInput
-      placeholder={placeholder}
-      onChange={onChange}
-      type={type ? type : "text"}
-    />
-  );
+  return <StyledInput placeholder={placeholder} onChange={onChange} type={type ? type : 'text'} />;
 };
 
 export default Input;

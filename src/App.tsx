@@ -10,34 +10,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
-    const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        setTimeout(() => setIsLoading(false), 1500);
-    });
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 1500);
+  });
 
-    return (
-        <AppStyled className="app-wrapper">
-            <Router>
-                <Loading isLoading={isLoading} />
-                <header className="app-header">
-                    <p className="text">Software Engineer</p>
-                    <Menu />
-                </header>
-                <section className="app-section">
-                    <Routes />
-                </section>
-                <footer className="footer">
-                    <FontAwesomeIcon
-                        icon={faDownload}
-                        size="2x"
-                        color={colors.green}
-                    />
-                    <LanguagePicker />
-                </footer>
-            </Router>
-        </AppStyled>
-    );
-};
+  return (
+    <AppStyled className="app-wrapper">
+      <Router>
+        <Loading isLoading={isLoading} />
+        <header className="app-header">
+          <p className="text">Software Engineer</p>
+          <Menu />
+        </header>
+        <section className="app-section">
+          <Routes />
+        </section>
+        <footer className="footer">
+          <FontAwesomeIcon icon={faDownload} size="2x" color={colors.green} />
+          <LanguagePicker />
+        </footer>
+      </Router>
+    </AppStyled>
+  )
+}
 
 export default App;

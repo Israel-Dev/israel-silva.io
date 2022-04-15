@@ -1,7 +1,7 @@
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { colors } from "../../utils";
-import { PaginationDotsWrapper } from "./PaginatrionDots.styled";
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { colors } from '../../utils';
+import { PaginationDotsWrapper } from './PaginatrionDots.styled';
 
 interface Props {
   numberOfPages: number;
@@ -9,11 +9,7 @@ interface Props {
   handleDotClick: (index: number) => void;
 }
 
-export const PaginationDots = ({
-  numberOfPages,
-  activeIndex,
-  handleDotClick,
-}: Props) => {
+export const PaginationDots = ({ numberOfPages, activeIndex, handleDotClick }: Props) => {
   const dostEl = () => {
     const elements = [];
 
@@ -22,7 +18,7 @@ export const PaginationDots = ({
         <FontAwesomeIcon
           key={`pagination-dots-${i}`}
           icon={faCircle}
-          className={`dot-${i === activeIndex ? "active" : "inactive"}`}
+          className={`dot-${i === activeIndex ? 'active' : 'inactive'}`}
           onClick={() => handleDotClick(i)}
         />
       );
@@ -32,8 +28,6 @@ export const PaginationDots = ({
   };
 
   return (
-    <PaginationDotsWrapper className="pagination-dots-wrapper">
-      {dostEl()}
-    </PaginationDotsWrapper>
+    <PaginationDotsWrapper className="pagination-dots-wrapper">{dostEl()}</PaginationDotsWrapper>
   );
 };

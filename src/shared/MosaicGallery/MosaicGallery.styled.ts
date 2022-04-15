@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "../../utils/colors";
+import styled from 'styled-components';
+import { colors } from '../../utils/colors';
 
 const getScrollingClasses = (itemsLength: number) => {
   let classes = ``;
@@ -29,13 +29,12 @@ export const MosaicGallerySection = styled.section`
   transition: all ease-in-out 0.4s;
   overflow: hidden;
 
-  ${(props: { itemsLength: number; index: number }) =>
-    getScrollingClasses(props.itemsLength)};
+  ${(props: { itemsLength: number; index: number }) => getScrollingClasses(props.itemsLength)};
 `;
 
 const getLeftParam = (index: number) => {
   if (index === 0) {
-    return "0vw";
+    return '0vw';
   } else {
     return `-${index * 90}vw`;
   }

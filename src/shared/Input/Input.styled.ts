@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "../../utils";
+import styled from 'styled-components';
+import { colors } from '../../utils';
 
 export const StyledInput = styled.input`
   font-size: 18px;

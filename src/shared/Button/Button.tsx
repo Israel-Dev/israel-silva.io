@@ -1,5 +1,5 @@
-import { MouseEventHandler } from "react";
-import { StyledButton } from "./Button.styled";
+import { MouseEventHandler } from 'react';
+import { StyledButton } from './Button.styled';
 
 interface Props {
   label: string;

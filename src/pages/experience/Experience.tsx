@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Timeline, TextBlock, TextAlign } from "../../shared";
-import { ColumnLeft, ColumnRight } from "./columns";
-import { ExperienceMain, ExperienceSection } from "./Experience.styled";
-import everis from "../../assets/everis.jpg";
-import bold01 from "../../assets/BOLD.jpg";
-import Netmore from "../../assets/Netmore.png";
+import { useState } from 'react';
+import { Timeline, TextBlock, TextAlign } from '../../shared';
+import { ColumnLeft, ColumnRight } from './columns';
+import { ExperienceMain, ExperienceSection } from './Experience.styled';
+import everis from '../../assets/everis.jpg';
+import bold01 from '../../assets/BOLD.jpg';
+import Netmore from '../../assets/Netmore.png';
 
 export interface Job {
   timeFrame: string;
@@ -16,26 +16,26 @@ export interface Job {
 
 const items: Job[] = [
   {
-    timeFrame: "Sep. 2019 - Oct. 2020",
-    enterpriseName: "everis Solutions",
-    jobTitle: "Junior Software Engineer",
+    timeFrame: 'Sep. 2019 - Oct. 2020',
+    enterpriseName: 'everis Solutions',
+    jobTitle: 'Junior Software Engineer',
     longDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!',
     enterpriseimage: everis,
   },
   {
-    timeFrame: "Oct. 2020 - Apr. 2021",
-    enterpriseName: "Netmore Electronics",
-    jobTitle: "Full Stack Engineer",
+    timeFrame: 'Oct. 2020 - Apr. 2021',
+    enterpriseName: 'Netmore Electronics',
+    jobTitle: 'Full Stack Engineer',
     longDescription: `- Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia.molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum. Numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!`,
     enterpriseimage: Netmore,
   },
   {
-    timeFrame: "Apr. 2021",
-    enterpriseName: "BOLD by devoteam",
-    jobTitle: "Software Engineer",
+    timeFrame: 'Apr. 2021',
+    enterpriseName: 'BOLD by devoteam',
+    jobTitle: 'Software Engineer',
     longDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!',
     enterpriseimage: bold01,
   },
 ];

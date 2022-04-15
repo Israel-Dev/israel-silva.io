@@ -1,4 +1,4 @@
-import { StyledTextArea } from "./TextArea.styled";
+import { StyledTextArea } from './TextArea.styled';
 
 interface Props {
   placeholder: string;
