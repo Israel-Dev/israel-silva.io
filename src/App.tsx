@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Loading, Menu, LanguagePicker } from './shared';
 import { colors } from './utils/colors';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 1500);
@@ -31,7 +31,7 @@ const App = () => {
           <FontAwesomeIcon icon={faDownload} size="2x" color={colors.green} />
           <LanguagePicker />
         </footer>
-      </Router>
+                    </Router>
     </AppStyled>
   )
 }
