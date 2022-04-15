@@ -1,4 +1,5 @@
-import { Input } from "../../../shared";
+import React from "react";
+import { Button, Input } from "../../../shared";
 import TextArea from "../../../shared/TextArea/TextArea";
 import { FormDiv, InputContainer, TextAreaContainer } from "./Form.styled";
 
@@ -10,7 +11,7 @@ const Form = () => {
         <Input placeholder={"Your Name"} onChange={(e) => {}} />
       </InputContainer>
       <InputContainer>
-        <Input placeholder={"Your Email"} onChange={(e) => {}} />
+        <Input placeholder={"Your Email"} onChange={(e) => {}} type={"email"} />
       </InputContainer>
       <InputContainer>
         <Input placeholder={"Your Company (Optional)"} onChange={(e) => {}} />
@@ -18,6 +19,7 @@ const Form = () => {
       <TextAreaContainer>
         <TextArea placeholder={"Your Message"} onChange={(e) => {}} />
       </TextAreaContainer>
+      <Button label={"Send"} callback={() => {}} />
     </FormDiv>
   );
 };

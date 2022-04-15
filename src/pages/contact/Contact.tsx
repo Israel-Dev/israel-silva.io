@@ -1,6 +1,6 @@
 import { TextBlock } from "../../shared";
 import { Form } from "./components";
-import { ContactMain } from "./Contact.styled";
+import { ContactMain, FormContainer } from "./Contact.styled";
 
 const Contact = () => {
   return (
@@ -11,7 +11,9 @@ const Contact = () => {
         fullWidth={true}
         hasUndeline={true}
       />
-      <Form />
+      <FormContainer>
+        <Form />
+      </FormContainer>
     </ContactMain>
   );
 };
