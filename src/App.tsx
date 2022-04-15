@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import AppStyled from './App.styled';
-import { Routes } from './routes';
+import AppStyled from './App.styled'
+import { Routes } from './routes'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Loading, Menu, LanguagePicker } from './shared';
+import { Loading, Menu, LanguagePicker } from './shared'
 import { colors } from './utils/colors';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
