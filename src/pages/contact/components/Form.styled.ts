@@ -22,3 +22,8 @@ export const InputContainer = styled.div`
   margin: 10px 0;
   width: 100%;
 `;
+
+export const TextAreaContainer = styled.div`
+  margin: 10px 0;
+  width: 100%;
+`;

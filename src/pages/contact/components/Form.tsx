@@ -1,5 +1,6 @@
 import { Input } from "../../../shared";
-import { FormDiv, InputContainer } from "./Form.styled";
+import TextArea from "../../../shared/TextArea/TextArea";
+import { FormDiv, InputContainer, TextAreaContainer } from "./Form.styled";
 
 const Form = () => {
   return (
@@ -14,6 +15,9 @@ const Form = () => {
       <InputContainer>
         <Input placeholder={"Your Company (Optional)"} onChange={(e) => {}} />
       </InputContainer>
+      <TextAreaContainer>
+        <TextArea placeholder={"Your Message"} onChange={(e) => {}} />
+      </TextAreaContainer>
     </FormDiv>
   );
 };
