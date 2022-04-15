@@ -6,12 +6,20 @@ export const ImageGallerySection = styled.section`
   height: 100%;
   display: flex;
   justify-content: center;
+
+  .hidden-image {
+    position: absolute;
+    opacity: 0;
+    transition: all ease-in-out 0.4s;
+  }
 `;
 
 export const ImageGalleryImg = styled.img`
   height: 100%;
   width: 85%;
   border-radius: 25px;
+  opacity: 1;
+  transition: all ease-in-out 0.4s;
 `;
 
 export const LeftArrowAside = styled.aside`
