@@ -1,7 +1,8 @@
 export enum RoutePaths {
-    'about' = '/about',
-    'experience' = '/experience',
-    'projects' = '/projects',
-    'home' = '/home',
-    '/' = '/',
+  "about" = "/about",
+  "experience" = "/experience",
+  "projects" = "/projects",
+  "home" = "/home",
+  "contact" = "/contact",
+  "/" = "/",
 }
