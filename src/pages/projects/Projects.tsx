@@ -3,7 +3,8 @@ import { ProjectPage } from './ProjectPage';
 import { TextBlock, MosaicGallery, PageTransition } from '../../shared';
 import carlashes from '../../assets/carlashes.png';
 import netmore from '../../assets/Netmore.png';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 const projectItems = [
   {
@@ -64,19 +65,21 @@ export const Projects = () => {
   return (
     <PageTransition>
       <ProjectsMain className="projects-main-wrapper">
-        {!projectId ? (
-          <>
-            <TextBlock
-              title={'02. Projects'}
-              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
-              fullWidth={true}
-              hasUndeline={true}
-            />
-            <MosaicGallery items={projectItems} />
-          </>
-        ) : (
-          <ProjectPage id={projectId} />
-        )}
+        <AnimatePresence exitBeforeEnter>
+          {!projectId ? (
+            <>
+              <TextBlock
+                title={'02. Projects'}
+                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+                fullWidth={true}
+                hasUndeline={true}
+              />
+              <MosaicGallery items={projectItems} />
+            </>
+          ) : (
+            <ProjectPage id={projectId} key={projectId} />
+          )}
+        </AnimatePresence>
       </ProjectsMain>
     </PageTransition>
   );

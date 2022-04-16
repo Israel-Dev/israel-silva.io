@@ -14,4 +14,10 @@ export const ExperienceSection = styled.section`
   align-items: center;
 `;
 
+export const ColumnContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const Column = styled.article``;

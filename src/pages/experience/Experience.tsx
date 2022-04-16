@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Timeline, TextBlock, TextAlign, PageTransition } from '../../shared';
 import { ColumnLeft, ColumnRight } from './columns';
-import { ExperienceMain, ExperienceSection } from './Experience.styled';
+import { ColumnContainer, ExperienceMain, ExperienceSection } from './Experience.styled';
 import everis from '../../assets/everis.jpg';
 import bold01 from '../../assets/BOLD.jpg';
 import Netmore from '../../assets/Netmore.png';
+import { AnimatePresence } from 'framer-motion';
 
 export interface Job {
   timeFrame: string;
@@ -59,24 +60,31 @@ export const Experience = () => {
           items={mappedItemsForTimeline}
         />
         <ExperienceSection className="experience-section">
-          {activeDot ? (
-            <>
-              <ColumnLeft {...activeDot} />
-              <ColumnRight
-                src={activeDot.enterpriseimage}
-                alt={activeDot.enterpriseName}
-                enterpriseName={activeDot.enterpriseName}
-              />
-            </>
-          ) : (
-            <TextBlock
-              title="01. Experience"
-              text="Select an item from the timeline"
-              fullWidth={true}
-              hasUndeline={false}
-              textAlign={TextAlign.center}
-            />
-          )}
+          <AnimatePresence exitBeforeEnter>
+            {activeDot ? (
+              <PageTransition key={activeDot.jobTitle}>
+                <ColumnContainer>
+                  <ColumnLeft {...activeDot} />
+                  <ColumnRight
+                    src={activeDot.enterpriseimage}
+                    alt={activeDot.enterpriseName}
+                    enterpriseName={activeDot.enterpriseName}
+                  />
+                </ColumnContainer>
+              </PageTransition>
+            ) : (
+              <PageTransition>
+                <TextBlock
+                  key="experience"
+                  title="01. Experience"
+                  text="Select an item from the timeline"
+                  fullWidth={true}
+                  hasUndeline={false}
+                  textAlign={TextAlign.center}
+                />
+              </PageTransition>
+            )}
+          </AnimatePresence>
         </ExperienceSection>
       </ExperienceMain>
     </PageTransition>

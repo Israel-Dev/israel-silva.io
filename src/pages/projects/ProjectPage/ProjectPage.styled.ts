@@ -12,6 +12,7 @@ export const ProjectPageHeader = styled.header`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  margin-top: -30px;
 `;
 
 export const ProjectPageSection = styled.section`
