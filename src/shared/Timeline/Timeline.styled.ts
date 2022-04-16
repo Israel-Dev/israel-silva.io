@@ -14,10 +14,10 @@ export const TimelineSection = styled.section`
 
 export const Line = styled.div`
   position: absolute;
-  left: -20%;
+  left: -7%;
   background-color: ${colors.green};
   height: 5px;
-  width: 118%;
+  width: 102%;
   top: 0;
 `;
 

@@ -1,6 +1,6 @@
 import { ProjectsMain } from './Projects.styled';
 import { ProjectPage } from './ProjectPage';
-import { TextBlock, MosaicGallery } from '../../shared';
+import { TextBlock, MosaicGallery, PageTransition } from '../../shared';
 import carlashes from '../../assets/carlashes.png';
 import netmore from '../../assets/Netmore.png';
 import { useLocation, useParams } from 'react-router-dom';
@@ -62,20 +62,22 @@ export const Projects = () => {
   const projectId = new URLSearchParams(location.search).get('id');
 
   return (
-    <ProjectsMain className="projects-main-wrapper">
-      {!projectId ? (
-        <>
-          <TextBlock
-            title={'02. Projects'}
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
-            fullWidth={true}
-            hasUndeline={true}
-          />
-          <MosaicGallery items={projectItems} />
-        </>
-      ) : (
-        <ProjectPage id={projectId} />
-      )}
-    </ProjectsMain>
+    <PageTransition>
+      <ProjectsMain className="projects-main-wrapper">
+        {!projectId ? (
+          <>
+            <TextBlock
+              title={'02. Projects'}
+              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+              fullWidth={true}
+              hasUndeline={true}
+            />
+            <MosaicGallery items={projectItems} />
+          </>
+        ) : (
+          <ProjectPage id={projectId} />
+        )}
+      </ProjectsMain>
+    </PageTransition>
   );
 };

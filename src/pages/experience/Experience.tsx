@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Timeline, TextBlock, TextAlign } from '../../shared';
+import { Timeline, TextBlock, TextAlign, PageTransition } from '../../shared';
 import { ColumnLeft, ColumnRight } from './columns';
 import { ExperienceMain, ExperienceSection } from './Experience.styled';
 import everis from '../../assets/everis.jpg';
@@ -50,33 +50,35 @@ export const Experience = () => {
   const [activeDot, setActiveDot] = useState<Job | null>(null);
 
   return (
-    <ExperienceMain className="experience-main">
-      <Timeline
-        startText="A long time ago in a galaxy far far away"
-        endText="Present"
-        clickCallback={setActiveDot}
-        items={mappedItemsForTimeline}
-      />
-      <ExperienceSection className="experience-section">
-        {activeDot ? (
-          <>
-            <ColumnLeft {...activeDot} />
-            <ColumnRight
-              src={activeDot.enterpriseimage}
-              alt={activeDot.enterpriseName}
-              enterpriseName={activeDot.enterpriseName}
+    <PageTransition>
+      <ExperienceMain className="experience-main">
+        <Timeline
+          startText="A long time ago in a galaxy far far away"
+          endText="Present"
+          clickCallback={setActiveDot}
+          items={mappedItemsForTimeline}
+        />
+        <ExperienceSection className="experience-section">
+          {activeDot ? (
+            <>
+              <ColumnLeft {...activeDot} />
+              <ColumnRight
+                src={activeDot.enterpriseimage}
+                alt={activeDot.enterpriseName}
+                enterpriseName={activeDot.enterpriseName}
+              />
+            </>
+          ) : (
+            <TextBlock
+              title="01. Experience"
+              text="Select an item from the timeline"
+              fullWidth={true}
+              hasUndeline={false}
+              textAlign={TextAlign.center}
             />
-          </>
-        ) : (
-          <TextBlock
-            title="01. Experience"
-            text="Select an item from the timeline"
-            fullWidth={true}
-            hasUndeline={false}
-            textAlign={TextAlign.center}
-          />
-        )}
-      </ExperienceSection>
-    </ExperienceMain>
+          )}
+        </ExperienceSection>
+      </ExperienceMain>
+    </PageTransition>
   );
 };
