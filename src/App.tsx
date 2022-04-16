@@ -16,6 +16,8 @@ const App = () => {
     setTimeout(() => setIsLoading(false), 1500);
   });
 
+  console.log('teste');
+
   return (
     <AppStyled className="app-wrapper">
       <Router>
