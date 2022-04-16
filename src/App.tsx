@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import AppStyled from './App.styled';
-import { Routes } from './routes'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Routes } from './routes';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { Loading, Menu, LanguagePicker } from './shared'
-import { colors } from './utils/colors'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import { Loading, Menu, LanguagePicker } from './shared';
+import { colors } from './utils/colors';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1500)
+    setTimeout(() => setIsLoading(false), 1500);
   });
 
-  console.log('No husky')
+  console.log('No husky');
 
   return (
     <AppStyled className="app-wrapper">
