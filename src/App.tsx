@@ -15,8 +15,9 @@ const App = () => {
     setTimeout(() => setIsLoading(false), 1500);
   });
 
-  console.log('No husky');
+  console.log('Test with husky@7');
 
+  console.log('123345465');
   return (
     <AppStyled className="app-wrapper">
       <Router>
