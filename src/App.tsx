@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AppStyled from './App.styled';
 import { Routes } from './routes';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Loading, Menu, LanguagePicker } from './shared';
 import { colors } from './utils/colors';
@@ -15,9 +15,6 @@ const App = () => {
     setTimeout(() => setIsLoading(false), 1500);
   });
 
-  console.log('Test with husky@7');
-
-  console.log('123345465');
   return (
     <AppStyled className="app-wrapper">
       <Router>
