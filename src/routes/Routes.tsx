@@ -1,10 +1,56 @@
 import { AnimatePresence } from 'framer-motion';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { RoutePaths } from '.';
 import { Home, About, Experience, Projects, Contact } from '../pages';
 
+const throttle = (callback: Function) => {
+  let inThrottle = false;
+
+  return () => {
+    if (!inThrottle) callback();
+    inThrottle = true;
+    setTimeout(() => (inThrottle = false), 3000);
+  };
+};
+
 export const Routes = () => {
+  const history = useHistory();
   const location = useLocation();
+
+  const handleScroll = (event: WheelEvent) => {
+    const { deltaY } = event;
+
+    const PathsArr = [
+      RoutePaths['/'],
+      RoutePaths.home,
+      RoutePaths.about,
+      RoutePaths.experience,
+      RoutePaths.projects,
+      RoutePaths.contact,
+    ];
+
+    const activePath = PathsArr.findIndex((path) => window.location.pathname === path);
+
+    if (deltaY <= 0) {
+      const newPath = activePath < 1 ? activePath : activePath - 1;
+
+      if (newPath !== activePath) history.push(PathsArr[newPath]);
+    } else if (deltaY > 0) {
+      const newPath = activePath >= PathsArr.length - 1 ? activePath : activePath + 1;
+      if (newPath !== activePath) history.push(PathsArr[newPath]);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('wheel', handleScroll);
+  }, []);
+
+  // useEffect(() => {
+  //   return history.listen((locationObj) => {
+  //     console.log('location have changed to', locationObj.pathname);
+  //   });
+  // }, [history]);
 
   return (
     <AnimatePresence exitBeforeEnter>
