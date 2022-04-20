@@ -1,6 +1,15 @@
 {
   "translation": {
     "Welcome to React": "Welcome to React and react-i18next",
-    "software-engineer": "Software Engineer"
+    "software-engineer": "Software Engineer",
+    "menu": {
+      "about": "About",
+      "experience": "Experience",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "home": {
+      "solutions": "Solutions for the web, mobile and anything in between"
+    }
   }
 }

@@ -1,6 +1,15 @@
 {
   "translation": {
     "Welcome to React": "Bem-vindo ao React",
-    "software-engineer": "Engenheiro de Software"
+    "software-engineer": "Engenheiro de Software",
+    "menu": {
+      "about": "Sobre Mim",
+      "experience": "Experiência",
+      "projects": "Projetos",
+      "contact": "Contato"
+    },
+    "home": {
+      "solutions": "Soluções para a Web, mobile e tudo pelo meio"
+    }
   }
 }
