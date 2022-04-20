@@ -4,13 +4,18 @@ import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { RoutePaths } from '.';
 import { Home, About, Experience, Projects, Contact } from '../pages';
 
-const throttle = (callback: Function) => {
-  let inThrottle = false;
+const throttle = (fn: Function, time: number) => {
+  let wait = false;
 
-  return () => {
-    if (!inThrottle) callback();
-    inThrottle = true;
-    setTimeout(() => (inThrottle = false), 3000);
+  return function () {
+    if (!wait) {
+      wait = true;
+      fn(arguments[0]);
+
+      setTimeout(() => {
+        wait = false;
+      }, time);
+    }
   };
 };
 
@@ -43,14 +48,9 @@ export const Routes = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('wheel', handleScroll);
+    const throttledHandleScroll = throttle(handleScroll, 1500);
+    window.addEventListener('wheel', throttledHandleScroll);
   }, []);
-
-  // useEffect(() => {
-  //   return history.listen((locationObj) => {
-  //     console.log('location have changed to', locationObj.pathname);
-  //   });
-  // }, [history]);
 
   return (
     <AnimatePresence exitBeforeEnter>
