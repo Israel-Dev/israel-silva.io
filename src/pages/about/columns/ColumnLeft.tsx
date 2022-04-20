@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import Israel from '../../../assets/Israel-silva.jpeg';
 import { ImageFrame, TextBlock } from '../../../shared';
 import { Column, ImageWrapper, TextBlockWrapper } from './Column.styled';
 
 export const ColumnLeft = () => {
+  const { t } = useTranslation('translation', { keyPrefix: 'about' });
   return (
     <Column className="about-column-left">
       <TextBlockWrapper>
@@ -10,8 +12,8 @@ export const ColumnLeft = () => {
           hasFlickering={true}
           hasUndeline={true}
           fullWidth={true}
-          title="00. About Me"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+          title={`00. ${t('title')}`}
+          text={t('description')}
         />
       </TextBlockWrapper>
       <ImageWrapper className="about-image-article">

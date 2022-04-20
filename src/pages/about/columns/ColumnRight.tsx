@@ -1,7 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { Title, List } from '../../../shared';
 import { Column, ColumnRightSection, ColumnRightHeader, ColumnRightArticle } from './Column.styled';
 
 export const ColumnRight = () => {
+  const { t } = useTranslation('translation', { keyPrefix: 'about' });
+
   return (
     <Column className="about-column-right">
       <ColumnRightSection className="about-column-right-section">

@@ -1,6 +1,5 @@
 {
   "translation": {
-    "Welcome to React": "Bem-vindo ao React",
     "software-engineer": "Engenheiro de Software",
     "menu": {
       "about": "Sobre Mim",
@@ -10,6 +9,11 @@
     },
     "home": {
       "solutions": "Soluções para a Web, mobile e tudo pelo meio"
+    },
+    "about": {
+      "title": "Sobre mim",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+      "some-technologies": "Algumas tecnologias as quais estou acostumado:"
     }
   }
 }
