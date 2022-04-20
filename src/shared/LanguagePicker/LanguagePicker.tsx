@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
@@ -6,14 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 
 import { colors } from '../../utils/colors';
-import styles from './LanguagePicker.styled';
+import styles, { LangPickerContainer } from './LanguagePicker.styled';
+import { useTranslation } from 'react-i18next';
 
 const LanguagePickerEl = document.getElementById('language-picker-portal');
 
 const langs = [
-  { name: 'English', value: 'ENG' },
-  { name: 'Português', value: 'PT' },
-  { name: 'Français', value: 'FR' },
+  { name: 'English', value: 'en-us', shortName: 'ENG' },
+  { name: 'Português', value: 'pt', shortName: 'PT' },
+  { name: 'Français', value: 'fr', shortName: 'FR' },
 ];
 
 export const LanguagePicker = () => {
@@ -50,23 +51,26 @@ export const LanguagePicker = () => {
     );
   });
 
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    i18n.changeLanguage(langs[lang].value);
+  }, [lang]);
+
   return (
-    <>
+    <LangPickerContainer>
       <styles.LangPickerIconWrapper className="lang-icon-wrapper">
-        <p className="lang-name">{langs[lang].value}</p>
+        <p className="lang-name">{langs[lang].shortName}</p>
         <i className="globe-icon" onClick={() => setIsOpen(!isOpen)}>
           <FontAwesomeIcon icon={faGlobe} size="2x" color={colors.green} />
         </i>
       </styles.LangPickerIconWrapper>
       {LanguagePickerEl &&
         ReactDOM.createPortal(
-          <>
-            <styles.LangPickerWrapper className="langPicker-wrapper" isOpen={isOpen}>
-              {langOptions}
-            </styles.LangPickerWrapper>
-          </>,
+          <styles.LangPickerWrapper className={isOpen ? '' : 'hidden'} isOpen={isOpen}>
+            {langOptions}
+          </styles.LangPickerWrapper>,
           LanguagePickerEl
         )}
-    </>
+    </LangPickerContainer>
   );
 };

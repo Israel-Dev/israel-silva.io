@@ -5,6 +5,13 @@ interface IProps {
   isOpen: boolean;
 }
 
+export const LangPickerContainer = styled.div`
+  .hidden {
+    opacity: 0;
+    transition: all linear 0.3s;
+  }
+`;
+
 const LangPickerIconWrapper = styled.div`
   display: flex;
   flex-direction: row;

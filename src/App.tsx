@@ -7,8 +7,10 @@ import { Loading, Menu, LanguagePicker } from './shared';
 import { colors } from './utils/colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const App = () => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ const App = () => {
         <Loading isLoading={isLoading} />
 
         <header className="app-header">
-          <p className="text">Software Engineer</p>
+          <p className="text">{t('software-engineer')}</p>
           <Menu />
         </header>
         <section className="app-section">
