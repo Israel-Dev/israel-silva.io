@@ -10,6 +10,7 @@ import {
 } from './ImageFrame.styled';
 import { Button, Card } from '../';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface OverlayProps {
   hasOverlay: boolean;
@@ -29,6 +30,7 @@ interface Props {
 
 export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
   const history = useHistory();
+  const { t } = useTranslation('translation', { keyPrefix: 'projects' });
   const [hover, setIsHover] = useState<boolean>(false);
 
   const cardsEl = overlayData?.cards?.map((card, i) => <Card key={`card-${i}`} label={card} />);
@@ -50,7 +52,7 @@ export const ImageFrame = ({ src, alt, height, width, overlayData }: Props) => {
               {overlayData.clickUrl && (
                 <ButtonWrapper className="button-wrapper">
                   <Button
-                    label="View more"
+                    label={t('view-more')}
                     callback={() => history.push(overlayData.clickUrl as string)}
                   />
                 </ButtonWrapper>

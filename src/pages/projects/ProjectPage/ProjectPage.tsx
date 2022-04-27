@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { RoutePaths } from 'routes';
 import { Button, ImageGallery, PageTransition, TextBlock } from 'shared';
@@ -15,6 +16,7 @@ interface Props {
 
 export const ProjectPage = ({ id }: Props) => {
   const history = useHistory();
+  const { t } = useTranslation('translation', { keyPrefix: 'projects' });
 
   if (!id) history.push(RoutePaths.projects);
 
@@ -36,7 +38,7 @@ export const ProjectPage = ({ id }: Props) => {
             />
           </ProjecPageTextBlock>
           <Button
-            label="Visit code base"
+            label={t('visit-code-base')}
             callback={() => window.open('https://netmoreelectronics.com', '_blank')}
           />
         </ProjectPageHeader>
