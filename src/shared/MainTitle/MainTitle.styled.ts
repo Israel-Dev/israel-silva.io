@@ -28,4 +28,6 @@ const mainTitle = styled.div`
   }
 `;
 
-export default { mainTitle };
+const styles = { mainTitle };
+
+export default styles;

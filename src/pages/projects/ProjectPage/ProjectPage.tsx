@@ -1,4 +1,4 @@
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { RoutePaths } from '../../../routes';
 import { Button, ImageGallery, PageTransition, TextBlock } from '../../../shared';
 import {

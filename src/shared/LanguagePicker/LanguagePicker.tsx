@@ -54,7 +54,7 @@ export const LanguagePicker = () => {
   const { i18n } = useTranslation();
   useEffect(() => {
     i18n.changeLanguage(langs[lang].value);
-  }, [lang]);
+  }, [lang, i18n]);
 
   return (
     <LangPickerContainer>

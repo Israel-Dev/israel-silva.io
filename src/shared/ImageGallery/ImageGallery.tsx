@@ -15,8 +15,6 @@ import { colors } from '../../utils';
 import { PaginationDots } from '../PaginationDots';
 import { useState } from 'react';
 
-interface Props {}
-
 const images = [everis, BOLD, BOLD2];
 
 export const ImageGallery = () => {

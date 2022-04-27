@@ -82,4 +82,6 @@ const LangPickerWrapper = styled.section`
   }
 `;
 
-export default { LangPickerWrapper, LangPickerIconWrapper };
+const styles = { LangPickerWrapper, LangPickerIconWrapper };
+
+export default styles;
