@@ -36,6 +36,12 @@
         "jobTitle": "Frontend Developer",
         "longDescription": "TESTANDO_3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
       }
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+      "view-more": "View More",
+      "visit-code-base": "Visit code base"
     }
   }
 }

@@ -1,6 +1,7 @@
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { RoutePaths } from '../../../routes';
-import { Button, ImageGallery, PageTransition, TextBlock } from '../../../shared';
+import { RoutePaths } from 'routes';
+import { Button, ImageGallery, PageTransition, TextBlock } from 'shared';
 import {
   ProjecPageTextBlock,
   ProjectPageHeader,
@@ -16,6 +17,10 @@ export const ProjectPage = ({ id }: Props) => {
   const history = useHistory();
 
   if (!id) history.push(RoutePaths.projects);
+
+  useEffect(() => {
+    // Fetch project id data
+  }, [id]);
 
   return (
     <PageTransition>
