@@ -20,7 +20,38 @@
       "title": "Expérience Professionnelle",
       "present": "Présent",
       "select-item": "Sélectionnez un élément dans la chronologie",
-      "a-long-time-ago": "Il y a longtemps dans une galaxie très lointaine"
+      "a-long-time-ago": "Il y a longtemps dans une galaxie très lointaine",
+      "job_0": {
+        "timeFrame": "Sep. 2019 - Oct. 2020",
+        "jobTitle": "Junior Frontend Developer",
+        "longDescription": "TESTANDO Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+      },
+      "job_1": {
+        "timeFrame": "Oct. 2020 - Avr. 2021",
+        "jobTitle": "Fullstack Developer",
+        "longDescription": "TESTANDO_2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+      },
+      "job_2": {
+        "timeFrame": "Avr. 2021",
+        "jobTitle": "Frontend Developer",
+        "longDescription": "TESTANDO_3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+      }
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+      "view-more": "Voir Plus",
+      "visit-code-base": "Visitez la base de code"
+    },
+    "contact": {
+      "title": "Contact",
+      "wanna-talk": "Voulez-vous parler avec moi? Envoyez-moi simplement un e-mail à me@israel-silva.io ou remplissez le formulaire ci-dessous.",
+      "get-in-touch": "Entrer en contact",
+      "your-name": "Votre Nom",
+      "your-email": "Votre E-mail",
+      "your-company": "Votre Entreprise (Facultatif)",
+      "your-message": "Votre Message",
+      "send": "Envoyer"
     }
   }
 }

@@ -14,6 +14,43 @@
       "title": "Sobre mim",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
       "some-technologies": "Algumas tecnologias as quais estou acostumado:"
+    },
+    "experience": {
+      "title": "Experiência",
+      "present": "Presente",
+      "select-item": "Escolha um item da timeline",
+      "a-long-time-ago": "À muito tempo atrás numa galáxia muito distante",
+      "job_0": {
+        "timeFrame": "Set. 2019 - Out. 2020",
+        "jobTitle": "Junior Frontend Developer",
+        "longDescription": "TESTANDO Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+      },
+      "job_1": {
+        "timeFrame": "Out. 2020 - Abr. 2021",
+        "jobTitle": "Fullstack Developer",
+        "longDescription": "TESTANDO_2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+      },
+      "job_2": {
+        "timeFrame": "Abr. 2021",
+        "jobTitle": "Frontend Developer",
+        "longDescription": "TESTANDO_3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!"
+      }
+    },
+    "projects": {
+      "title": "Projetos",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
+      "view-more": "Ver Mais",
+      "visit-code-base": "Visitar repositório"
+    },
+    "contact": {
+      "title": "Contato",
+      "wanna-talk": "Quer falar comigo? Basta enviar-me um email para me@israel-silva.io ou preencha o formulário abaixo.",
+      "get-in-touch": "Entrar em contato",
+      "your-name": "Seu Nome",
+      "your-email": "Seu Email",
+      "your-company": "Sua Empresa (Opcional)",
+      "your-message": "Sua Mensagem",
+      "send": "Enviar"
     }
   }
 }
