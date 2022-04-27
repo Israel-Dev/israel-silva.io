@@ -1,14 +1,16 @@
-import { PageTransition, TextBlock } from '../../shared';
+import { useTranslation } from 'react-i18next';
+import { PageTransition, TextBlock } from 'shared';
 import { Form } from './components';
 import { ContactMain, FormContainer } from './Contact.styled';
 
 const Contact = () => {
+  const { t } = useTranslation('translation', { keyPrefix: 'contact' });
   return (
     <PageTransition>
       <ContactMain>
         <TextBlock
-          title={'03. Contact'}
-          text={`Want to talk with me? Just send me an email at me@israel-silva.io or fill the form underneath.`}
+          title={`03. ${t('title')}`}
+          text={t('wanna-talk')}
           fullWidth={true}
           hasUndeline={true}
         />

@@ -1,25 +1,28 @@
 import React from 'react';
-import { Button, Input } from '../../../shared';
-import TextArea from '../../../shared/TextArea/TextArea';
+import { useTranslation } from 'react-i18next';
+import { Button, Input } from 'shared';
+import TextArea from 'shared/TextArea/TextArea';
 import { FormDiv, InputContainer, TextAreaContainer } from './Form.styled';
 
 const Form = () => {
+  const { t } = useTranslation('translation', { keyPrefix: 'contact' });
+
   return (
     <FormDiv className="form-container">
-      <h2>Get in touch</h2>
+      <h2>{t('get-in-touch')}</h2>
       <InputContainer>
-        <Input placeholder={'Your Name'} onChange={(e) => {}} />
+        <Input placeholder={t('your-name')} onChange={(e) => {}} />
       </InputContainer>
       <InputContainer>
-        <Input placeholder={'Your Email'} onChange={(e) => {}} type={'email'} />
+        <Input placeholder={t('your-email')} onChange={(e) => {}} type={'email'} />
       </InputContainer>
       <InputContainer>
-        <Input placeholder={'Your Company (Optional)'} onChange={(e) => {}} />
+        <Input placeholder={t('your-company')} onChange={(e) => {}} />
       </InputContainer>
       <TextAreaContainer>
-        <TextArea placeholder={'Your Message'} onChange={(e) => {}} />
+        <TextArea placeholder={t('your-message')} onChange={(e) => {}} />
       </TextAreaContainer>
-      <Button label={'Send'} callback={() => {}} />
+      <Button label={t('send')} callback={() => {}} />
     </FormDiv>
   );
 };

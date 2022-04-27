@@ -42,6 +42,16 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
       "view-more": "View More",
       "visit-code-base": "Visit code base"
+    },
+    "contact": {
+      "title": "Contact",
+      "wanna-talk": "Want to talk with me? Just send me an email at me@israel-silva.io or fill the form underneath.",
+      "get-in-touch": "Get in touch",
+      "your-name": "Your Name",
+      "your-email": "Your Email",
+      "your-company": "Your Company (Optional)",
+      "your-message": "Your Message",
+      "send": "Send"
     }
   }
 }
