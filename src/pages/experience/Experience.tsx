@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Timeline, TextBlock, TextAlign, PageTransition } from '../../shared';
+import { Timeline, TextBlock, TextAlign, PageTransition } from 'shared';
 import { ColumnLeft, ColumnRight } from './columns';
 import { ColumnContainer, ExperienceMain, ExperienceSection } from './Experience.styled';
-import everis from '../../assets/everis.jpg';
-import bold01 from '../../assets/BOLD.jpg';
-import Netmore from '../../assets/Netmore.png';
+import everis from 'assets/everis.jpg';
+import bold01 from 'assets/BOLD.jpg';
+import Netmore from 'assets/Netmore.png';
 import { AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export interface Job {
   timeFrame: string;
@@ -17,45 +18,45 @@ export interface Job {
 
 const items: Job[] = [
   {
-    timeFrame: 'Sep. 2019 - Oct. 2020',
+    timeFrame: '',
     enterpriseName: 'everis Solutions',
-    jobTitle: 'Junior Software Engineer',
-    longDescription:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!',
+    jobTitle: 'Junior Frontend Developer',
+    longDescription: '',
     enterpriseimage: everis,
   },
   {
-    timeFrame: 'Oct. 2020 - Apr. 2021',
-    enterpriseName: 'Netmore Electronics',
-    jobTitle: 'Full Stack Engineer',
-    longDescription: `- Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia.molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum. Numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!`,
+    timeFrame: '',
+    enterpriseName: 'Netmore',
+    jobTitle: 'Fullstack Developer',
+    longDescription: ``,
     enterpriseimage: Netmore,
   },
   {
-    timeFrame: 'Apr. 2021',
-    enterpriseName: 'BOLD by devoteam',
-    jobTitle: 'Software Engineer',
-    longDescription:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!',
+    timeFrame: '',
+    enterpriseName: 'Devoteam',
+    jobTitle: 'Frontend Developer',
+    longDescription: '',
     enterpriseimage: bold01,
   },
 ];
 
-const mappedItemsForTimeline = items.map((item) => ({
-  ...item,
-  timeFrame: item.timeFrame,
-  description: item.enterpriseName,
-}));
-
 export const Experience = () => {
+  const { t } = useTranslation('translation', { keyPrefix: 'experience' });
   const [activeDot, setActiveDot] = useState<Job | null>(null);
+
+  const mappedItemsForTimeline = items.map((item, i) => ({
+    ...item,
+    timeFrame: t(`job_${i}.timeFrame`),
+    description: item.enterpriseName,
+    longDescription: t(`job_${i}.longDescription`),
+  }));
 
   return (
     <PageTransition>
       <ExperienceMain className="experience-main">
         <Timeline
-          startText="A long time ago in a galaxy far far away"
-          endText="Present"
+          startText={t('a-long-time-ago')}
+          endText={t('present')}
           clickCallback={setActiveDot}
           items={mappedItemsForTimeline}
         />
@@ -76,8 +77,8 @@ export const Experience = () => {
               <PageTransition>
                 <TextBlock
                   key="experience"
-                  title="01. Experience"
-                  text="Select an item from the timeline"
+                  title={`01. ${t('title')}`}
+                  text={t('select-item')}
                   fullWidth={true}
                   hasUndeline={false}
                   textAlign={TextAlign.center}

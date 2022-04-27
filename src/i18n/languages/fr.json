@@ -15,6 +15,12 @@
       "title": "Sur moi",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!",
       "some-technologies": "Certaines technologies auxquelles je suis habitué:"
+    },
+    "experience": {
+      "title": "Expérience Professionnelle",
+      "present": "Présent",
+      "select-item": "Sélectionnez un élément dans la chronologie",
+      "a-long-time-ago": "Il y a longtemps dans une galaxie très lointaine"
     }
   }
 }

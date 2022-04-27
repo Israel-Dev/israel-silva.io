@@ -18,6 +18,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const ImageLabel = styled.p`
+  padding-top: 2.5px;
   position: absolute;
   width: 100%;
   bottom: 0;

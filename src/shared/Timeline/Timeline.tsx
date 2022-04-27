@@ -10,7 +10,7 @@ import {
   TimelineSection,
 } from './Timeline.styled';
 
-interface Item {
+interface ItemType {
   timeFrame: string;
   description: string;
 }
@@ -18,7 +18,7 @@ interface Item {
 interface Props {
   startText?: string;
   endText?: string;
-  items: Item[];
+  items: ItemType[];
   clickCallback?: Function;
 }
 

@@ -1,6 +1,6 @@
 import { TextBlockParagraph, TextBlockSection } from './TextBlock.styled';
 import { Title } from '../';
-import { MouseEventHandler, ReactElement } from 'react';
+import { MouseEventHandler } from 'react';
 
 export enum TextAlign {
   center = 'center',

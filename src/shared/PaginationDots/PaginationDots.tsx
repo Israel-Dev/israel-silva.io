@@ -1,6 +1,5 @@
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { colors } from '../../utils';
 import { PaginationDotsWrapper } from './PaginatrionDots.styled';
 
 interface Props {

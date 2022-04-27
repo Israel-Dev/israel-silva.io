@@ -51,6 +51,7 @@ export const Item = styled.div`
 `;
 
 export const ItemDescription = styled.article`
+  min-width: 150px;
   text-align: center;
   margin-top: 20px;
 `;
