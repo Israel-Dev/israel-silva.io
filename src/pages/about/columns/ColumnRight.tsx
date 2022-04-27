@@ -9,7 +9,7 @@ export const ColumnRight = () => {
     <Column className="about-column-right">
       <ColumnRightSection className="about-column-right-section">
         <ColumnRightHeader>
-          <Title title={"Some technologies I'm used to:"} customHeight="22px" />
+          <Title title={t('some-technologies')} customHeight="22px" />
         </ColumnRightHeader>
         <ColumnRightArticle>
           <List
