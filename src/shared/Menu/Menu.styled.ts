@@ -31,7 +31,32 @@ export const PageIndex = styled.span`
 export const MobileMenuNav = styled.nav`
   display: block;
 
+  .mobile-menu-icon {
+    z-index: 1000;
+  }
+
+  .mobile-menu-icon:hover {
+    cursor: pointer;
+  }
+
+  .visible {
+    z-index: 100;
+    opacity: 1;
+    transition: all ease-in-out 1s;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+  }
+
   @media (min-width: ${mobileMinWidth}) {
     display: none;
   }
+`;
+
+export const MobileMenuBackground = styled.div`
+  opacity: 0;
+  position: absolute;
+  background-color: ${colors.black};
+  transition: all ease-in-out 1s;
+  text-align: center;
 `;

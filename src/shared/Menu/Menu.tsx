@@ -1,10 +1,18 @@
 import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { RoutePaths } from 'routes';
 import { colors } from 'utils/colors';
-import { MenuNav, PagesWrapper, PageIndex, PageTitle, MobileMenuNav } from './Menu.styled';
+import {
+  MenuNav,
+  PagesWrapper,
+  PageIndex,
+  PageTitle,
+  MobileMenuNav,
+  MobileMenuBackground,
+} from './Menu.styled';
 
 export const Menu = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'menu' });
@@ -32,6 +40,8 @@ export const Menu = () => {
     );
   });
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <>
       <MenuNav>
@@ -43,7 +53,16 @@ export const Menu = () => {
         </PagesWrapper>
       </MenuNav>
       <MobileMenuNav className="mobile-menu-nav">
-        <FontAwesomeIcon icon={faBars} color={colors.green} size="2x" />
+        <FontAwesomeIcon
+          icon={faBars}
+          color={colors.green}
+          size="2x"
+          className="mobile-menu-icon"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        />
+        <MobileMenuBackground className={isMobileMenuOpen ? 'visible' : ''}>
+          <h1>Hey!!!</h1>
+        </MobileMenuBackground>
       </MobileMenuNav>
     </>
   );
