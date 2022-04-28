@@ -37,9 +37,6 @@ export const Routes = () => {
 
     const activePath = PathsArr.findIndex((path) => window.location.pathname === path);
 
-    console.log('activePath', activePath);
-    console.log('deltaY', deltaY);
-
     if (deltaY <= 0 && activePath !== 1) {
       const newPath = activePath < 1 ? activePath : activePath - 1;
 
