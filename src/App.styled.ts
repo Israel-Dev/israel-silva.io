@@ -8,24 +8,6 @@ const AppStyled = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  .app-section {
-    position: relative;
-    height: 100%;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .footer {
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2vh;
-  }
 `;
 
 export const AppHeader = styled.header`
@@ -37,6 +19,24 @@ export const AppHeader = styled.header`
   @media (max-width: ${mobileMinWidth}) {
     min-height: 80px;
   }
+`;
+
+export const AppSection = styled.section`
+  position: relative;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const AppFooter = styled.footer`
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2vh;
 `;
 
 export default AppStyled;

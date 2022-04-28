@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AppStyled, { AppHeader } from './App.styled';
+import AppStyled, { AppFooter, AppHeader, AppSection } from './App.styled';
 import { Routes } from './routes';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -26,13 +26,13 @@ const App = () => {
           <p className="text">{t('software-engineer')}</p>
           <Menu />
         </AppHeader>
-        <section className="app-section">
+        <AppSection className="app-section">
           <Routes />
-        </section>
-        <footer className="footer">
+        </AppSection>
+        <AppFooter className="footer">
           <FontAwesomeIcon icon={faDownload} size="2x" color={colors.green} />
           <LanguagePicker />
-        </footer>
+        </AppFooter>
       </Router>
     </AppStyled>
   );
