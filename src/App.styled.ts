@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobileMinWidth } from 'utils';
 
 const AppStyled = styled.main`
   width: 100%;
@@ -7,13 +8,6 @@ const AppStyled = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  .app-header {
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   .app-section {
     position: relative;
@@ -31,6 +25,17 @@ const AppStyled = styled.main`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2vh;
+  }
+`;
+
+export const AppHeader = styled.header`
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: ${mobileMinWidth}) {
+    min-height: 80px;
   }
 `;
 

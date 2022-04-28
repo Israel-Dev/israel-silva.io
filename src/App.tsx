@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import AppStyled from './App.styled';
+import AppStyled, { AppHeader } from './App.styled';
 import { Routes } from './routes';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -22,10 +22,10 @@ const App = () => {
       <Router>
         <Loading isLoading={isLoading} />
 
-        <header className="app-header">
+        <AppHeader className="app-header">
           <p className="text">{t('software-engineer')}</p>
           <Menu />
-        </header>
+        </AppHeader>
         <section className="app-section">
           <Routes />
         </section>
