@@ -2,6 +2,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
+import { RoutePaths } from 'routes';
 import { colors } from '../../utils/colors';
 import { MenuNav } from './Menu.styled';
 
@@ -10,10 +11,10 @@ export const Menu = () => {
   const history = useHistory();
 
   const pages: { value: string; label: string }[] = [
-    { value: '/about', label: t('about') },
-    { value: '/experience', label: t('experience') },
-    { value: '/projects', label: t('projects') },
-    { value: '/contact', label: t('contact') },
+    { value: RoutePaths.about, label: t('about') },
+    { value: RoutePaths.experience, label: t('experience') },
+    { value: RoutePaths.projects, label: t('projects') },
+    { value: RoutePaths.contact, label: t('contact') },
   ];
 
   const goToPage = (value: string) => history.push(value);
@@ -30,7 +31,7 @@ export const Menu = () => {
   return (
     <MenuNav>
       <div className="pages-wrapper">
-        <p className="page-title" onClick={() => goToPage('/')}>
+        <p className="page-title" onClick={() => goToPage(RoutePaths.home)}>
           <FontAwesomeIcon icon={faHome} color={colors.green} />
         </p>
         {menuElem}

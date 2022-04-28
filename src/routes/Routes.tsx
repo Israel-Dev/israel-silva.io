@@ -37,10 +37,15 @@ export const Routes = () => {
 
     const activePath = PathsArr.findIndex((path) => window.location.pathname === path);
 
-    if (deltaY <= 0) {
+    console.log('activePath', activePath);
+    console.log('deltaY', deltaY);
+
+    if (deltaY <= 0 && activePath !== 1) {
       const newPath = activePath < 1 ? activePath : activePath - 1;
 
       if (newPath !== activePath) history.push(PathsArr[newPath]);
+    } else if (deltaY > 0 && activePath === 0) {
+      history.push(PathsArr[2]);
     } else if (deltaY > 0) {
       const newPath = activePath >= PathsArr.length - 1 ? activePath : activePath + 1;
       if (newPath !== activePath) history.push(PathsArr[newPath]);
