@@ -23,3 +23,9 @@ code {
   transition: all ease-in-out 1s !important;
   overflow: hidden !important;
 }
+
+.visible-lang-picker {
+  opacity: 1 !important;
+  height: 100vh !important;
+  transition: all ease-in-out 0.8s !important;
+}

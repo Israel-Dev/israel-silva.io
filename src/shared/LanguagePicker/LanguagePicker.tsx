@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
-
-import { colors } from '../../utils/colors';
-import styles, { LangPickerContainer } from './LanguagePicker.styled';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { LangPickerIconWrapper, LangPickerWrapper } from './LanguagePicker.styled';
+import { langs, colors } from 'utils';
 
 const LanguagePickerEl = document.getElementById('language-picker-portal');
-
-const langs = [
-  { name: 'English', value: 'en-us', shortName: 'ENG' },
-  { name: 'Português', value: 'pt', shortName: 'PT' },
-  { name: 'Français', value: 'fr', shortName: 'FR' },
-];
 
 export const LanguagePicker = () => {
   const [lang, setLang] = useState(0);
@@ -52,25 +43,26 @@ export const LanguagePicker = () => {
   });
 
   const { i18n } = useTranslation();
+
   useEffect(() => {
     i18n.changeLanguage(langs[lang].value);
   }, [lang, i18n]);
 
   return (
-    <LangPickerContainer>
-      <styles.LangPickerIconWrapper className="lang-icon-wrapper">
+    <>
+      <LangPickerIconWrapper className="lang-icon-wrapper" onClick={() => setIsOpen(!isOpen)}>
         <p className="lang-name">{langs[lang].shortName}</p>
-        <i className="globe-icon" onClick={() => setIsOpen(!isOpen)}>
+        <i className="globe-icon">
           <FontAwesomeIcon icon={faGlobe} size="2x" color={colors.green} />
         </i>
-      </styles.LangPickerIconWrapper>
+      </LangPickerIconWrapper>
       {LanguagePickerEl &&
         ReactDOM.createPortal(
-          <styles.LangPickerWrapper className={isOpen ? '' : 'hidden'} isOpen={isOpen}>
+          <LangPickerWrapper className={isOpen ? 'visible-lang-picker' : ''}>
             {langOptions}
-          </styles.LangPickerWrapper>,
+          </LangPickerWrapper>,
           LanguagePickerEl
         )}
-    </LangPickerContainer>
+    </>
   );
 };

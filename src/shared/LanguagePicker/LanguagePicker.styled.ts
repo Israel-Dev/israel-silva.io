@@ -1,28 +1,20 @@
 import styled from 'styled-components';
 import { colors } from '../../utils/colors';
 
-interface IProps {
-  isOpen: boolean;
-}
-
-export const LangPickerContainer = styled.div`
-  .hidden {
-    opacity: 0;
-    transition: all linear 0.3s;
-  }
-`;
-
-const LangPickerIconWrapper = styled.div`
+export const LangPickerIconWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 10000;
+  cursor: pointer;
 
   .lang-name {
+    z-index: 10000;
     margin-right: 10px;
   }
 
   .globe-icon {
-    z-index: 10;
+    z-index: 10000;
   }
 
   .globe-icon:hover {
@@ -30,20 +22,17 @@ const LangPickerIconWrapper = styled.div`
   }
 `;
 
-const LangPickerWrapper = styled.section`
+export const LangPickerWrapper = styled.section`
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 151;
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 0;
   background-color: black;
 
-  visibility: ${(props: IProps) => (props.isOpen ? 'visible' : 'hidden')};
-  transition: visibility 0.3s linear;
-
-  opacity: ${(props: IProps) => (props.isOpen ? '1' : '0')};
-  transition: opacity 0.3s linear;
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
 
   display: flex;
   flex-direction: column;
@@ -81,7 +70,3 @@ const LangPickerWrapper = styled.section`
     cursor: pointer;
   }
 `;
-
-const styles = { LangPickerWrapper, LangPickerIconWrapper };
-
-export default styles;

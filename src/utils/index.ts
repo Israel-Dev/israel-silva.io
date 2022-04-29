@@ -1,2 +1,2 @@
 export { colors } from './colors';
-export { mobileMinWidth } from './constants';
+export { mobileMinWidth, langs } from './constants';
