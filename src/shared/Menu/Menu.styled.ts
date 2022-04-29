@@ -29,23 +29,18 @@ export const PageIndex = styled.span`
 `;
 
 export const MobileMenuNav = styled.nav`
-  display: block;
+  position: absolute;
+  top: 30%;
+  right: 50px;
 
   .mobile-menu-icon {
-    z-index: 1000;
+    top: 0;
+    z-index: 150;
+    position: absolute;
   }
 
   .mobile-menu-icon:hover {
     cursor: pointer;
-  }
-
-  .visible {
-    z-index: 100;
-    opacity: 1;
-    transition: all ease-in-out 1s;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
   }
 
   @media (min-width: ${mobileMinWidth}) {
@@ -54,9 +49,18 @@ export const MobileMenuNav = styled.nav`
 `;
 
 export const MobileMenuBackground = styled.div`
-  opacity: 0;
   position: absolute;
+  opacity: 0;
+  height: 0vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  z-index: 100;
   background-color: ${colors.black};
   transition: all ease-in-out 1s;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;

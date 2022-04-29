@@ -16,3 +16,10 @@ code {
   font-family: 'Courier New';
   src: local('courier-new'), url(./fonts/courier-new.ttf) format('ttf');
 }
+
+.visible-mobile-menu {
+  opacity: 1 !important;
+  height: 100vh !important;
+  transition: all ease-in-out 1s !important;
+  overflow: hidden !important;
+}

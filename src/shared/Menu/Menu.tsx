@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { RoutePaths } from 'routes';
@@ -13,6 +14,23 @@ import {
   MobileMenuNav,
   MobileMenuBackground,
 } from './Menu.styled';
+
+const MenuItem = ({
+  page,
+  onClick,
+  index,
+}: {
+  page: { value: string; label: string };
+  onClick: () => void;
+  index: number;
+}) => {
+  return (
+    <PageTitle className="page-title" onClick={onClick}>
+      <PageIndex className="page-index">0{index}.</PageIndex>
+      {page.label}
+    </PageTitle>
+  );
+};
 
 export const Menu = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'menu' });
@@ -29,18 +47,43 @@ export const Menu = () => {
 
   const menuElem = pages.map((page, i) => {
     return (
-      <PageTitle
-        className="page-title"
+      <MenuItem
         key={`${page.value}-${i}`}
         onClick={() => goToPage(page.value)}
-      >
-        <PageIndex className="page-index">0{i}.</PageIndex>
-        {page.label}
-      </PageTitle>
+        index={i}
+        page={page}
+      />
     );
   });
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  let mobileMenuElem: JSX.Element[] = [];
+
+  mobileMenuElem = [
+    <MenuItem
+      key={`${RoutePaths.home}-0`}
+      onClick={() => {
+        goToPage(RoutePaths.home);
+        setIsMobileMenuOpen(false);
+      }}
+      index={0}
+      page={{ value: RoutePaths.home, label: 'Home' }}
+    />,
+    ...pages.map((page, i) => {
+      return (
+        <MenuItem
+          key={`${page.value}-${i + 1}`}
+          onClick={() => {
+            goToPage(page.value);
+            setIsMobileMenuOpen(false);
+          }}
+          index={i + 1}
+          page={page}
+        />
+      );
+    }),
+  ];
 
   return (
     <>
@@ -60,10 +103,13 @@ export const Menu = () => {
           className="mobile-menu-icon"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         />
-        <MobileMenuBackground className={isMobileMenuOpen ? 'visible' : ''}>
-          <h1>Hey!!!</h1>
-        </MobileMenuBackground>
       </MobileMenuNav>
+      {ReactDOM.createPortal(
+        <MobileMenuBackground className={isMobileMenuOpen ? 'visible-mobile-menu' : ''}>
+          {mobileMenuElem}
+        </MobileMenuBackground>,
+        document.getElementById('mobile-menu-portal') as Element
+      )}
     </>
   );
 };

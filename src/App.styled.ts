@@ -17,6 +17,7 @@ export const AppHeader = styled.header`
   align-items: center;
 
   @media (max-width: ${mobileMinWidth}) {
+    position: relative;
     min-height: 80px;
   }
 `;
