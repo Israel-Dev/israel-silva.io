@@ -1,12 +1,10 @@
-import styles from './MainTitle.styled';
+import { MainTitleStyle } from './MainTitle.styled';
 
-export const MainTitle = (props: { title?: string; subtitle?: string }) => {
-  const { title, subtitle } = props;
-
+export const MainTitle = ({ title, subtitle }: { title?: string; subtitle?: string }) => {
   return (
-    <styles.mainTitle className="main-title-wrapper">
+    <MainTitleStyle className="main-title-wrapper">
       <h1 className="title">{title}</h1>
       {subtitle ? <h1 className="subtitle">{subtitle}</h1> : null}
-    </styles.mainTitle>
+    </MainTitleStyle>
   );
 };

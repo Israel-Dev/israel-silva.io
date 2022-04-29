@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobileMinWidth } from 'utils';
 import { colors } from '../../utils/colors';
 
 export const HomeWrapper = styled.main`
@@ -37,6 +38,10 @@ export const HomeWrapper = styled.main`
     flex-direction: row;
     align-items: center;
   }
+
+  @media (max-width: ${mobileMinWidth}) {
+    flex-direction: column;
+  }
 `;
 
 export const HomeAside = styled.aside``;
@@ -48,4 +53,9 @@ export const HomeArticle = styled.article`
 export const HomeImage = styled.img`
   max-width: 600px;
   border-radius: 50px;
+
+  @media (max-width: ${mobileMinWidth}) {
+    width: 80vw;
+    max-width: 500px;
+  }
 `;

@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { mobileMinWidth } from 'utils';
 import { colors } from '../../utils/colors';
 
 const flicker = keyframes`
@@ -11,7 +12,7 @@ const flicker = keyframes`
     }
 `;
 
-const mainTitle = styled.div`
+export const MainTitleStyle = styled.div`
   .title {
     color: ${colors.green};
     font-size: 4.3em;
@@ -26,8 +27,15 @@ const mainTitle = styled.div`
     animation: ${flicker} 1.5s linear reverse infinite;
     animation-delay: 6s;
   }
+
+  @media (max-width: ${mobileMinWidth}) {
+    .title {
+      font-size: 2.3em;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+    }
+  }
 `;
-
-const styles = { mainTitle };
-
-export default styles;
