@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobileMinWidth } from 'utils';
 import { colors } from '../../utils/colors';
 
 const borderRadius = '20px';
@@ -60,6 +61,12 @@ export const Overlay = styled.div`
 
   background-color: ${(props: OverlayProps) => (props.color ? props.color : colors.green)};
   transition: all ease-in-out 0.3s;
+
+  @media (max-width: ${mobileMinWidth}) {
+    width: 30vw;
+    height: 200px;
+    min-width: 200px;
+  }
 `;
 
 export const OverlayContent = styled.div`
@@ -104,6 +111,12 @@ export const Image = styled.img`
   margin-top: 0;
   transition: all 0.4s ease-in-out;
   object-fit: cover;
+
+  @media (max-width: ${mobileMinWidth}) {
+    width: 30vw;
+    height: 200px;
+    min-width: 200px;
+  }
 `;
 
 export const Background = styled.div`
@@ -116,4 +129,10 @@ export const Background = styled.div`
   width: ${(props: { height: string; width: string }) => props.width};
   border: ${colors.green} solid 1px;
   transition: all 0.4s ease-in-out;
+
+  @media (max-width: ${mobileMinWidth}) {
+    width: 30vw;
+    height: 200px;
+    min-width: 200px;
+  }
 `;
