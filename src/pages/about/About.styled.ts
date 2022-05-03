@@ -14,6 +14,7 @@ export const AboutMain = styled.main`
 
 export const AboutSection = styled.section`
   height: 70vh;
+  width: 100%;
   position: relative;
 
   @media (max-width: ${mobileMinWidth}) {
@@ -25,6 +26,9 @@ export const AboutSection = styled.section`
 
 export const DesktopRightSection = styled.section`
   width: 40vw;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 
   @media (max-width: ${mobileMinWidth}) {
     display: none;

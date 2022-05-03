@@ -8,7 +8,7 @@ export const ListUL = styled.ul`
   padding-left: 0;
   list-style-type: none;
   columns: 2;
-  float: right;
+  float: left;
   width: 75%;
 
   @media (max-width: ${mobileMinWidth}) {
