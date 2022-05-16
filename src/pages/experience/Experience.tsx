@@ -1,7 +1,13 @@
 import { useState } from 'react';
-import { Timeline, TextBlock, TextAlign, PageTransition } from 'shared';
+import { Timeline, TextBlock, TextAlign, PageTransition, Accordion } from 'shared';
 import { ColumnLeft, ColumnRight } from './columns';
-import { ColumnContainer, ExperienceMain, ExperienceSection } from './Experience.styled';
+import {
+  ColumnContainer,
+  DesktopView,
+  ExperienceMain,
+  ExperienceSection,
+  MobileView,
+} from './Experience.styled';
 import everis from 'assets/everis.jpg';
 import bold01 from 'assets/BOLD.jpg';
 import Netmore from 'assets/Netmore.png';
@@ -18,25 +24,25 @@ export interface Job {
 
 const items: Job[] = [
   {
-    timeFrame: '',
-    enterpriseName: 'everis Solutions',
-    jobTitle: 'Junior Frontend Developer',
+    timeFrame: 'Abr. 2021 - Present',
+    enterpriseName: 'Devoteam',
+    jobTitle: 'Frontend Developer',
     longDescription: '',
-    enterpriseimage: everis,
+    enterpriseimage: bold01,
   },
   {
-    timeFrame: '',
+    timeFrame: 'Out. 2020 - Mar. 2021',
     enterpriseName: 'Netmore',
     jobTitle: 'Fullstack Developer',
     longDescription: ``,
     enterpriseimage: Netmore,
   },
   {
-    timeFrame: '',
-    enterpriseName: 'Devoteam',
-    jobTitle: 'Frontend Developer',
+    timeFrame: 'Sep. 2019 - Out. 2020',
+    enterpriseName: 'NTT Data',
+    jobTitle: 'Junior Frontend Developer',
     longDescription: '',
-    enterpriseimage: bold01,
+    enterpriseimage: everis,
   },
 ];
 
@@ -54,39 +60,50 @@ export const Experience = () => {
   return (
     <PageTransition>
       <ExperienceMain className="experience-main">
-        <Timeline
-          startText={t('a-long-time-ago')}
-          endText={t('present')}
-          clickCallback={setActiveDot}
-          items={mappedItemsForTimeline}
-        />
-        <ExperienceSection className="experience-section">
-          <AnimatePresence exitBeforeEnter>
-            {activeDot ? (
-              <PageTransition key={activeDot.jobTitle}>
-                <ColumnContainer>
-                  <ColumnLeft {...activeDot} />
-                  <ColumnRight
-                    src={activeDot.enterpriseimage}
-                    alt={activeDot.enterpriseName}
-                    enterpriseName={activeDot.enterpriseName}
+        <DesktopView className="experience-desktop-view">
+          <Timeline
+            startText={t('a-long-time-ago')}
+            endText={t('present')}
+            clickCallback={setActiveDot}
+            items={mappedItemsForTimeline}
+          />
+          <ExperienceSection className="experience-section">
+            <AnimatePresence exitBeforeEnter>
+              {activeDot ? (
+                <PageTransition key={activeDot.jobTitle}>
+                  <ColumnContainer>
+                    <ColumnLeft {...activeDot} />
+                    <ColumnRight
+                      src={activeDot.enterpriseimage}
+                      alt={activeDot.enterpriseName}
+                      enterpriseName={activeDot.enterpriseName}
+                    />
+                  </ColumnContainer>
+                </PageTransition>
+              ) : (
+                <PageTransition>
+                  <TextBlock
+                    key="experience"
+                    title={`01. ${t('title')}`}
+                    text={t('select-item')}
+                    fullWidth={true}
+                    hasUndeline={false}
+                    textAlign={TextAlign.center}
                   />
-                </ColumnContainer>
-              </PageTransition>
-            ) : (
-              <PageTransition>
-                <TextBlock
-                  key="experience"
-                  title={`01. ${t('title')}`}
-                  text={t('select-item')}
-                  fullWidth={true}
-                  hasUndeline={false}
-                  textAlign={TextAlign.center}
-                />
-              </PageTransition>
-            )}
-          </AnimatePresence>
-        </ExperienceSection>
+                </PageTransition>
+              )}
+            </AnimatePresence>
+          </ExperienceSection>
+        </DesktopView>
+        <MobileView className="experience-mobile-view">
+          <Accordion
+            items={items.map((item) => ({
+              title: `${item.jobTitle} \n@${item.enterpriseName} | ${item.timeFrame}`,
+              shortTitle: `Hello`,
+              content: <>{item.longDescription}</>,
+            }))}
+          />
+        </MobileView>
       </ExperienceMain>
     </PageTransition>
   );

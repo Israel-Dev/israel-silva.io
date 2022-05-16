@@ -14,3 +14,4 @@ export { Button } from './Button';
 export { ImageGallery } from './ImageGallery';
 export { Input } from './Input';
 export { PageTransition } from './PageTransition';
+export { Accordion } from './Accordion';
