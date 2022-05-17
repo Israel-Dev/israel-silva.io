@@ -21,6 +21,7 @@ export const MobileView = styled.div`
   display: none;
 
   @media (max-width: ${mobileMinWidth}) {
+    position: relative;
     display: block;
     width: 100%;
   }
@@ -43,3 +44,27 @@ export const ColumnContainer = styled.div`
 `;
 
 export const Column = styled.article``;
+
+export const AccordionContainer = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const AccordionContent = styled.div`
+  text-align: center;
+`;
+
+export const StyledImage = styled.img`
+  height: 15vh;
+  min-height: 100px;
+  width: 70%;
+  object-fit: cover;
+`;
+
+export const StyledParagraph = styled.p`
+  text-align: left;
+`;

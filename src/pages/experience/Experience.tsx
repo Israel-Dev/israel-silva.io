@@ -2,11 +2,15 @@ import { useState } from 'react';
 import { Timeline, TextBlock, TextAlign, PageTransition, Accordion } from 'shared';
 import { ColumnLeft, ColumnRight } from './columns';
 import {
+  AccordionContainer,
+  AccordionContent,
   ColumnContainer,
   DesktopView,
   ExperienceMain,
   ExperienceSection,
   MobileView,
+  StyledImage,
+  StyledParagraph,
 } from './Experience.styled';
 import everis from 'assets/everis.jpg';
 import bold01 from 'assets/BOLD.jpg';
@@ -27,7 +31,8 @@ const items: Job[] = [
     timeFrame: 'Abr. 2021 - Present',
     enterpriseName: 'Devoteam',
     jobTitle: 'Frontend Developer',
-    longDescription: '',
+    longDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam dolore laboriosam quod nostrum ratione fuga quos cupiditate distinctio et earum impedit deleniti amet, aut error deserunt consequuntur enim. Aspernatur, corporis!',
     enterpriseimage: bold01,
   },
   {
@@ -96,13 +101,23 @@ export const Experience = () => {
           </ExperienceSection>
         </DesktopView>
         <MobileView className="experience-mobile-view">
-          <Accordion
-            items={items.map((item) => ({
-              title: `${item.jobTitle} \n@${item.enterpriseName} | ${item.timeFrame}`,
-              shortTitle: `Hello`,
-              content: <>{item.longDescription}</>,
-            }))}
-          />
+          <AccordionContainer className="accordtion-container">
+            {items.map((item) => (
+              <Accordion
+                key={`${item.jobTitle}-${item.timeFrame}`}
+                item={{
+                  title: `${item.jobTitle} \n\n@${item.enterpriseName} | ${item.timeFrame}`,
+                  shortTitle: ``,
+                  content: (
+                    <AccordionContent>
+                      <StyledImage src={item.enterpriseimage} alt={item.enterpriseName} />
+                      <StyledParagraph>{item.longDescription}</StyledParagraph>
+                    </AccordionContent>
+                  ),
+                }}
+              />
+            ))}
+          </AccordionContainer>
         </MobileView>
       </ExperienceMain>
     </PageTransition>
